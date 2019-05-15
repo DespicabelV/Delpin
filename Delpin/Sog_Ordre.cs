@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Delpin
 {
-    public partial class Form1 : Form
+    public partial class Sog_Ordre : Form
     {
-        public Form1()
+        public Sog_Ordre()
         {
             InitializeComponent();
         }
