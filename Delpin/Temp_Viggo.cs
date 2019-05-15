@@ -8,6 +8,5 @@ namespace Delpin
 {
     class Temp_Viggo
     {
-        //hej
     }
 }
