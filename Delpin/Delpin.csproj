@@ -95,6 +95,18 @@
     <Compile Include="Temp_Katrine.cs" />
     <Compile Include="Temp_Line1.cs" />
     <Compile Include="Temp_Viggo.cs" />
+    <EmbeddedResource Include="Hovedmenu.resx">
+      <DependentUpon>Hovedmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Leje_Liste.resx">
+      <DependentUpon>Leje_Liste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opret_DEB.resx">
+      <DependentUpon>Opret_DEB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opret_Ordre.resx">
+      <DependentUpon>Opret_Ordre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -104,6 +116,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sog_DEB.resx">
+      <DependentUpon>Sog_DEB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sog_Ordre.resx">
+      <DependentUpon>Sog_Ordre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sog_RES.resx">
+      <DependentUpon>Sog_RES.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
