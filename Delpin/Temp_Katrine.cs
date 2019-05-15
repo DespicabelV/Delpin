@@ -8,5 +8,6 @@ namespace Delpin
 {
     class Temp_Katrine
     {
+        int i = 5;
     }
 }
