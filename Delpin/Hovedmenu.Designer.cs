@@ -28,79 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonDEB = new System.Windows.Forms.Button();
+            this.buttonOrdre = new System.Windows.Forms.Button();
+            this.buttonRedigerKunde = new System.Windows.Forms.Button();
+            this.buttonRedigerRes = new System.Windows.Forms.Button();
+            this.buttonRedigerOrdre = new System.Windows.Forms.Button();
+            this.buttonLejeListe = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonDEB
             // 
-            this.button1.Location = new System.Drawing.Point(76, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 49);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Opret DEB";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonDEB.Location = new System.Drawing.Point(101, 52);
+            this.buttonDEB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDEB.Name = "buttonDEB";
+            this.buttonDEB.Size = new System.Drawing.Size(152, 60);
+            this.buttonDEB.TabIndex = 0;
+            this.buttonDEB.Text = "Opret DEB";
+            this.buttonDEB.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonOrdre
             // 
-            this.button2.Location = new System.Drawing.Point(76, 117);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 49);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Opret Ordre";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonOrdre.Location = new System.Drawing.Point(101, 144);
+            this.buttonOrdre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOrdre.Name = "buttonOrdre";
+            this.buttonOrdre.Size = new System.Drawing.Size(152, 60);
+            this.buttonOrdre.TabIndex = 1;
+            this.buttonOrdre.Text = "Opret Ordre";
+            this.buttonOrdre.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonRedigerKunde
             // 
-            this.button3.Location = new System.Drawing.Point(196, 42);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 49);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Søg/Rediger Kunde";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonRedigerKunde.Location = new System.Drawing.Point(261, 52);
+            this.buttonRedigerKunde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRedigerKunde.Name = "buttonRedigerKunde";
+            this.buttonRedigerKunde.Size = new System.Drawing.Size(152, 60);
+            this.buttonRedigerKunde.TabIndex = 2;
+            this.buttonRedigerKunde.Text = "Søg/Rediger Kunde";
+            this.buttonRedigerKunde.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonRedigerRes
             // 
-            this.button4.Location = new System.Drawing.Point(196, 117);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 49);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Søg/Rediger RES";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonRedigerRes.Location = new System.Drawing.Point(261, 144);
+            this.buttonRedigerRes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRedigerRes.Name = "buttonRedigerRes";
+            this.buttonRedigerRes.Size = new System.Drawing.Size(152, 60);
+            this.buttonRedigerRes.TabIndex = 3;
+            this.buttonRedigerRes.Text = "Søg/Rediger RES";
+            this.buttonRedigerRes.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // buttonRedigerOrdre
             // 
-            this.button5.Location = new System.Drawing.Point(316, 42);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(114, 49);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Søg/Rediger Ordre";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonRedigerOrdre.Location = new System.Drawing.Point(421, 52);
+            this.buttonRedigerOrdre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRedigerOrdre.Name = "buttonRedigerOrdre";
+            this.buttonRedigerOrdre.Size = new System.Drawing.Size(152, 60);
+            this.buttonRedigerOrdre.TabIndex = 4;
+            this.buttonRedigerOrdre.Text = "Søg/Rediger Ordre";
+            this.buttonRedigerOrdre.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // buttonLejeListe
             // 
-            this.button6.Location = new System.Drawing.Point(316, 117);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(114, 49);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Leje liste";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonLejeListe.Location = new System.Drawing.Point(421, 144);
+            this.buttonLejeListe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLejeListe.Name = "buttonLejeListe";
+            this.buttonLejeListe.Size = new System.Drawing.Size(152, 60);
+            this.buttonLejeListe.TabIndex = 5;
+            this.buttonLejeListe.Text = "Leje liste";
+            this.buttonLejeListe.UseVisualStyleBackColor = true;
             // 
             // Hovedmenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 254);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(695, 313);
+            this.Controls.Add(this.buttonLejeListe);
+            this.Controls.Add(this.buttonRedigerOrdre);
+            this.Controls.Add(this.buttonRedigerRes);
+            this.Controls.Add(this.buttonRedigerKunde);
+            this.Controls.Add(this.buttonOrdre);
+            this.Controls.Add(this.buttonDEB);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Hovedmenu";
             this.Text = "Hoved Menu";
             this.ResumeLayout(false);
@@ -109,12 +116,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonDEB;
+        private System.Windows.Forms.Button buttonOrdre;
+        private System.Windows.Forms.Button buttonRedigerKunde;
+        private System.Windows.Forms.Button buttonRedigerRes;
+        private System.Windows.Forms.Button buttonRedigerOrdre;
+        private System.Windows.Forms.Button buttonLejeListe;
     }
 }
 
