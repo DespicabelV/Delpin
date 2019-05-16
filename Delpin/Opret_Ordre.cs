@@ -16,5 +16,16 @@ namespace Delpin
         {
             InitializeComponent();
         }
+
+        private void buttonSog_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonOpretKunde_Click(object sender, EventArgs e)
+        {
+            Opret_DEB DEB = new Opret_DEB();
+            DEB.ShowDialog();
+        }
     }
 }
