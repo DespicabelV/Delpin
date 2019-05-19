@@ -75,7 +75,7 @@
             // textBoxCVRCPR
             // 
             this.textBoxCVRCPR.Location = new System.Drawing.Point(100, 12);
-            this.textBoxCVRCPR.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCVRCPR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCVRCPR.Name = "textBoxCVRCPR";
             this.textBoxCVRCPR.Size = new System.Drawing.Size(251, 22);
             this.textBoxCVRCPR.TabIndex = 1;
@@ -83,7 +83,7 @@
             // textBoxNavn
             // 
             this.textBoxNavn.Location = new System.Drawing.Point(100, 44);
-            this.textBoxNavn.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNavn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNavn.Name = "textBoxNavn";
             this.textBoxNavn.Size = new System.Drawing.Size(251, 22);
             this.textBoxNavn.TabIndex = 3;
@@ -112,28 +112,30 @@
             // 
             this.checkBoxJa.AutoSize = true;
             this.checkBoxJa.Location = new System.Drawing.Point(100, 79);
-            this.checkBoxJa.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxJa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBoxJa.Name = "checkBoxJa";
             this.checkBoxJa.Size = new System.Drawing.Size(45, 21);
             this.checkBoxJa.TabIndex = 5;
             this.checkBoxJa.Text = "Ja";
             this.checkBoxJa.UseVisualStyleBackColor = true;
+            this.checkBoxJa.CheckedChanged += new System.EventHandler(this.checkBoxJa_CheckedChanged);
             // 
             // checkBoxNej
             // 
             this.checkBoxNej.AutoSize = true;
             this.checkBoxNej.Location = new System.Drawing.Point(157, 79);
-            this.checkBoxNej.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxNej.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBoxNej.Name = "checkBoxNej";
             this.checkBoxNej.Size = new System.Drawing.Size(51, 21);
             this.checkBoxNej.TabIndex = 6;
             this.checkBoxNej.Text = "Nej";
             this.checkBoxNej.UseVisualStyleBackColor = true;
+            this.checkBoxNej.CheckedChanged += new System.EventHandler(this.checkBoxNej_CheckedChanged);
             // 
             // textBoxGade
             // 
-            this.textBoxGade.Location = new System.Drawing.Point(508, 16);
-            this.textBoxGade.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxGade.Location = new System.Drawing.Point(100, 108);
+            this.textBoxGade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxGade.Name = "textBoxGade";
             this.textBoxGade.Size = new System.Drawing.Size(416, 22);
             this.textBoxGade.TabIndex = 8;
@@ -141,7 +143,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(453, 20);
+            this.label4.Location = new System.Drawing.Point(17, 113);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 17);
@@ -150,8 +152,8 @@
             // 
             // textBoxPostnr
             // 
-            this.textBoxPostnr.Location = new System.Drawing.Point(508, 48);
-            this.textBoxPostnr.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPostnr.Location = new System.Drawing.Point(100, 140);
+            this.textBoxPostnr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPostnr.Name = "textBoxPostnr";
             this.textBoxPostnr.Size = new System.Drawing.Size(123, 22);
             this.textBoxPostnr.TabIndex = 10;
@@ -159,7 +161,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(453, 52);
+            this.label5.Location = new System.Drawing.Point(17, 145);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 17);
@@ -168,8 +170,8 @@
             // 
             // textBoxBy
             // 
-            this.textBoxBy.Location = new System.Drawing.Point(673, 48);
-            this.textBoxBy.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxBy.Location = new System.Drawing.Point(265, 140);
+            this.textBoxBy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxBy.Name = "textBoxBy";
             this.textBoxBy.Size = new System.Drawing.Size(251, 22);
             this.textBoxBy.TabIndex = 12;
@@ -177,7 +179,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(640, 52);
+            this.label6.Location = new System.Drawing.Point(232, 144);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(24, 17);
@@ -187,7 +189,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 111);
+            this.label7.Location = new System.Drawing.Point(17, 112);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 17);
@@ -197,8 +199,8 @@
             // comboBoxAfdeling
             // 
             this.comboBoxAfdeling.FormattingEnabled = true;
-            this.comboBoxAfdeling.Location = new System.Drawing.Point(100, 107);
-            this.comboBoxAfdeling.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxAfdeling.Location = new System.Drawing.Point(100, 108);
+            this.comboBoxAfdeling.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxAfdeling.Name = "comboBoxAfdeling";
             this.comboBoxAfdeling.Size = new System.Drawing.Size(251, 24);
             this.comboBoxAfdeling.TabIndex = 14;
@@ -213,62 +215,57 @@
             this.Pris,
             this.Start,
             this.Slut});
-            this.dataGridView1.Location = new System.Drawing.Point(72, 188);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(72, 204);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(853, 331);
+            this.dataGridView1.Size = new System.Drawing.Size(853, 315);
             this.dataGridView1.TabIndex = 15;
             // 
             // Navn
             // 
             this.Navn.HeaderText = "Navn";
             this.Navn.Name = "Navn";
-            this.Navn.ReadOnly = true;
             // 
             // Res_Nr
             // 
             this.Res_Nr.HeaderText = "RES Nr.";
             this.Res_Nr.Name = "Res_Nr";
-            this.Res_Nr.ReadOnly = true;
             // 
             // Pris_Pr_Dag
             // 
             this.Pris_Pr_Dag.HeaderText = "Pris pr. dag";
             this.Pris_Pr_Dag.Name = "Pris_Pr_Dag";
-            this.Pris_Pr_Dag.ReadOnly = true;
             // 
             // Pris
             // 
             this.Pris.HeaderText = "Pris";
             this.Pris.Name = "Pris";
-            this.Pris.ReadOnly = true;
             // 
             // Start
             // 
             this.Start.HeaderText = "Start Dato";
             this.Start.Name = "Start";
-            this.Start.ReadOnly = true;
             // 
             // Slut
             // 
             this.Slut.HeaderText = "Slut Dato";
             this.Slut.Name = "Slut";
-            this.Slut.ReadOnly = true;
             // 
             // buttonTilfojVare
             // 
-            this.buttonTilfojVare.Location = new System.Drawing.Point(72, 153);
-            this.buttonTilfojVare.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonTilfojVare.Location = new System.Drawing.Point(72, 167);
+            this.buttonTilfojVare.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonTilfojVare.Name = "buttonTilfojVare";
             this.buttonTilfojVare.Size = new System.Drawing.Size(100, 28);
             this.buttonTilfojVare.TabIndex = 16;
             this.buttonTilfojVare.Text = "Tilføj Vare";
             this.buttonTilfojVare.UseVisualStyleBackColor = true;
+            this.buttonTilfojVare.Click += new System.EventHandler(this.buttonTilfojVare_Click);
             // 
             // buttonSletVare
             // 
-            this.buttonSletVare.Location = new System.Drawing.Point(825, 153);
-            this.buttonSletVare.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSletVare.Location = new System.Drawing.Point(825, 167);
+            this.buttonSletVare.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSletVare.Name = "buttonSletVare";
             this.buttonSletVare.Size = new System.Drawing.Size(100, 28);
             this.buttonSletVare.TabIndex = 17;
@@ -298,23 +295,25 @@
             // textBoxEkslMoms
             // 
             this.textBoxEkslMoms.Location = new System.Drawing.Point(516, 559);
-            this.textBoxEkslMoms.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxEkslMoms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxEkslMoms.Name = "textBoxEkslMoms";
+            this.textBoxEkslMoms.ReadOnly = true;
             this.textBoxEkslMoms.Size = new System.Drawing.Size(132, 22);
             this.textBoxEkslMoms.TabIndex = 20;
             // 
             // textBoxInkMoms
             // 
             this.textBoxInkMoms.Location = new System.Drawing.Point(661, 559);
-            this.textBoxInkMoms.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxInkMoms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxInkMoms.Name = "textBoxInkMoms";
+            this.textBoxInkMoms.ReadOnly = true;
             this.textBoxInkMoms.Size = new System.Drawing.Size(132, 22);
             this.textBoxInkMoms.TabIndex = 21;
             // 
             // buttonOpretOrdre
             // 
             this.buttonOpretOrdre.Location = new System.Drawing.Point(803, 539);
-            this.buttonOpretOrdre.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonOpretOrdre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonOpretOrdre.Name = "buttonOpretOrdre";
             this.buttonOpretOrdre.Size = new System.Drawing.Size(123, 44);
             this.buttonOpretOrdre.TabIndex = 22;
@@ -324,8 +323,9 @@
             // buttonSog
             // 
             this.buttonSog.Location = new System.Drawing.Point(369, 9);
+            this.buttonSog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSog.Name = "buttonSog";
-            this.buttonSog.Size = new System.Drawing.Size(75, 29);
+            this.buttonSog.Size = new System.Drawing.Size(75, 30);
             this.buttonSog.TabIndex = 23;
             this.buttonSog.Text = "Søg";
             this.buttonSog.UseVisualStyleBackColor = true;
@@ -334,6 +334,7 @@
             // buttonOpretKunde
             // 
             this.buttonOpretKunde.Location = new System.Drawing.Point(369, 46);
+            this.buttonOpretKunde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonOpretKunde.Name = "buttonOpretKunde";
             this.buttonOpretKunde.Size = new System.Drawing.Size(75, 54);
             this.buttonOpretKunde.TabIndex = 24;
@@ -345,7 +346,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 620);
+            this.ClientSize = new System.Drawing.Size(951, 620);
             this.Controls.Add(this.buttonOpretKunde);
             this.Controls.Add(this.buttonSog);
             this.Controls.Add(this.buttonOpretOrdre);
@@ -371,7 +372,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxCVRCPR);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Opret_Ordre";
             this.Text = "Opret_Ordre";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -400,12 +401,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonTilfojVare;
         private System.Windows.Forms.Button buttonSletVare;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Navn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Res_Nr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pris_Pr_Dag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pris;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Start;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Slut;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxEkslMoms;
@@ -413,5 +408,11 @@
         private System.Windows.Forms.Button buttonOpretOrdre;
         private System.Windows.Forms.Button buttonSog;
         private System.Windows.Forms.Button buttonOpretKunde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Navn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Res_Nr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pris_Pr_Dag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pris;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Start;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Slut;
     }
 }
