@@ -8,5 +8,8 @@ namespace Delpin
 {
     class Temp_Viggo
     {
+        public static void Opret_Ordre_Sog(int ID)
+        {
+        }
     }
 }
