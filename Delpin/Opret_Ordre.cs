@@ -12,6 +12,7 @@ namespace Delpin
 {
     public partial class Opret_Ordre : Form
     {
+        Temp_Viggo test = new Temp_Viggo();
         public Opret_Ordre()
         {
             InitializeComponent();
@@ -23,12 +24,17 @@ namespace Delpin
             label6.Visible = false;
             label4.Visible = false;
             label7.Visible = false;
-            Database_Manager Conn = new Database_Manager();
         }
 
         private void buttonSog_Click(object sender, EventArgs e)
         {
-            Temp_Viggo.Opret_Ordre_Sog(Convert.ToInt32(textBoxCVRCPR.Text));
+            string navn, byen, gade;
+            int postnr;
+            test.Opret_Ordre_Sog(Convert.ToInt64(textBoxCVRCPR.Text), out navn, out gade, out postnr, out byen);
+            textBoxNavn.Text = navn;
+            textBoxBy.Text = byen;
+            textBoxGade.Text = gade;
+            textBoxPostnr.Text = Convert.ToString(postnr);
         }
 
         private void buttonOpretKunde_Click(object sender, EventArgs e)
@@ -73,6 +79,63 @@ namespace Delpin
             label6.Visible = false;
             label4.Visible = false;
             label7.Visible = true;
+        }
+
+        private void buttonSletVare_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ButtonUpdate_Click(object sender, EventArgs e)
+        {
+            double maxI = 0;
+            double maxE = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                maxE = maxE + Convert.ToDouble(dataGridView1.Rows[i].Cells["Pris"].Value);
+            }
+            textBoxEkslMoms.Text = Convert.ToString(maxE);
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                maxI = maxI + Convert.ToDouble(dataGridView1.Rows[i].Cells["Pris"].Value);
+            }
+            maxI = maxI * 1.25;
+            textBoxInkMoms.Text = Convert.ToString(maxI);
+        }
+
+        private void buttonOpretOrdre_Click(object sender, EventArgs e)
+        {
+            string dato, gade, byen, res;
+            int levering, postnr;
+            long cprcvr;
+            res = "";
+
+            dato = DateTime.Now.ToString("yyyy-MM-dd");
+            gade = textBoxGade.Text;
+            byen = textBoxBy.Text;
+            cprcvr = Convert.ToInt32(textBoxCVRCPR.Text);
+            postnr = Convert.ToInt32(textBoxPostnr.Text);
+
+            if (checkBoxJa.Checked == true)
+            {
+                levering = 1;
+            }
+            else
+            {
+                levering = 0;
+            }
+
+            for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
+            {
+                res = res + $"{dataGridView1.Rows[i].Cells["RES_Nr"].Value}|";
+            }
+            
+            MessageBox.Show(test.Opret_Ordre_OO(dato, levering, gade, postnr, byen, res, cprcvr));
         }
     }
 }
