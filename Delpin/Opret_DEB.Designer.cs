@@ -62,7 +62,7 @@
             // textBoxCPRCVR
             // 
             this.textBoxCPRCVR.Location = new System.Drawing.Point(136, 12);
-            this.textBoxCPRCVR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCPRCVR.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCPRCVR.Name = "textBoxCPRCVR";
             this.textBoxCPRCVR.Size = new System.Drawing.Size(272, 22);
             this.textBoxCPRCVR.TabIndex = 1;
@@ -70,7 +70,7 @@
             // textBoxNavn
             // 
             this.textBoxNavn.Location = new System.Drawing.Point(136, 44);
-            this.textBoxNavn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNavn.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNavn.Name = "textBoxNavn";
             this.textBoxNavn.Size = new System.Drawing.Size(380, 22);
             this.textBoxNavn.TabIndex = 3;
@@ -88,7 +88,7 @@
             // textBoxGade
             // 
             this.textBoxGade.Location = new System.Drawing.Point(136, 76);
-            this.textBoxGade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxGade.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxGade.Name = "textBoxGade";
             this.textBoxGade.Size = new System.Drawing.Size(380, 22);
             this.textBoxGade.TabIndex = 5;
@@ -106,7 +106,7 @@
             // textBoxPostNr
             // 
             this.textBoxPostNr.Location = new System.Drawing.Point(136, 108);
-            this.textBoxPostNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPostNr.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPostNr.Name = "textBoxPostNr";
             this.textBoxPostNr.Size = new System.Drawing.Size(89, 22);
             this.textBoxPostNr.TabIndex = 7;
@@ -124,7 +124,7 @@
             // textBoxTlf
             // 
             this.textBoxTlf.Location = new System.Drawing.Point(136, 140);
-            this.textBoxTlf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxTlf.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTlf.Name = "textBoxTlf";
             this.textBoxTlf.Size = new System.Drawing.Size(380, 22);
             this.textBoxTlf.TabIndex = 9;
@@ -142,7 +142,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(136, 172);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(380, 22);
             this.textBoxEmail.TabIndex = 11;
@@ -160,7 +160,7 @@
             // textBoxAnsvarlig
             // 
             this.textBoxAnsvarlig.Location = new System.Drawing.Point(136, 204);
-            this.textBoxAnsvarlig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAnsvarlig.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAnsvarlig.Name = "textBoxAnsvarlig";
             this.textBoxAnsvarlig.Size = new System.Drawing.Size(272, 22);
             this.textBoxAnsvarlig.TabIndex = 13;
@@ -178,7 +178,7 @@
             // textBoxBy
             // 
             this.textBoxBy.Location = new System.Drawing.Point(268, 108);
-            this.textBoxBy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxBy.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxBy.Name = "textBoxBy";
             this.textBoxBy.Size = new System.Drawing.Size(248, 22);
             this.textBoxBy.TabIndex = 14;
@@ -196,7 +196,7 @@
             // buttonKredit
             // 
             this.buttonKredit.Location = new System.Drawing.Point(417, 10);
-            this.buttonKredit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonKredit.Margin = new System.Windows.Forms.Padding(4);
             this.buttonKredit.Name = "buttonKredit";
             this.buttonKredit.Size = new System.Drawing.Size(100, 28);
             this.buttonKredit.TabIndex = 16;
@@ -206,22 +206,24 @@
             // buttonPrivat
             // 
             this.buttonPrivat.Location = new System.Drawing.Point(417, 202);
-            this.buttonPrivat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPrivat.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPrivat.Name = "buttonPrivat";
             this.buttonPrivat.Size = new System.Drawing.Size(100, 28);
             this.buttonPrivat.TabIndex = 17;
             this.buttonPrivat.Text = "Privat";
             this.buttonPrivat.UseVisualStyleBackColor = true;
+            this.buttonPrivat.Click += new System.EventHandler(this.buttonPrivat_Click);
             // 
             // buttonOpret
             // 
             this.buttonOpret.Location = new System.Drawing.Point(361, 236);
-            this.buttonOpret.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOpret.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOpret.Name = "buttonOpret";
             this.buttonOpret.Size = new System.Drawing.Size(156, 57);
             this.buttonOpret.TabIndex = 18;
             this.buttonOpret.Text = "Opret";
             this.buttonOpret.UseVisualStyleBackColor = true;
+            this.buttonOpret.Click += new System.EventHandler(this.buttonOpret_Click);
             // 
             // Opret_DEB
             // 
@@ -247,7 +249,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxCPRCVR);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Opret_DEB";
             this.Text = "Opret_DEB";
             this.ResumeLayout(false);

@@ -16,5 +16,24 @@ namespace Delpin
         {
             InitializeComponent();
         }
+
+        private void buttonPrivat_Click(object sender, EventArgs e)
+        {
+            textBoxAnsvarlig.Text = textBoxNavn.Text;
+        }
+
+        private void buttonOpret_Click(object sender, EventArgs e)
+        {
+            Int64 cprCvr = Convert.ToInt64(textBoxCPRCVR.Text);
+            string navn = textBoxNavn.Text;
+            string gade = textBoxGade.Text;
+            int postnr = Convert.ToInt32(textBoxPostNr.Text);
+            string by = textBoxBy.Text;
+            int tlf = Convert.ToInt32(textBoxTlf.Text);
+            string email = textBoxEmail.Text;
+            string ansvarlig = textBoxAnsvarlig.Text;
+            control.GemDEB(cprCvr, navn, gade, postnr, by, tlf, email, ansvarlig);
+            MessageBox.Show("Kunde oprettet");
+        }
     }
 }

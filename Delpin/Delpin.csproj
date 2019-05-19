@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controller.cs" />
     <Compile Include="Database_Manager.cs" />
+    <Compile Include="DEB.cs" />
     <Compile Include="Hovedmenu.cs">
       <SubType>Form</SubType>
     </Compile>

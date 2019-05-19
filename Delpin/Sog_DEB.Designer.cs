@@ -58,22 +58,24 @@
             // buttonSlet
             // 
             this.buttonSlet.Location = new System.Drawing.Point(413, 546);
-            this.buttonSlet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSlet.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSlet.Name = "buttonSlet";
             this.buttonSlet.Size = new System.Drawing.Size(116, 41);
             this.buttonSlet.TabIndex = 37;
             this.buttonSlet.Text = "Slet";
             this.buttonSlet.UseVisualStyleBackColor = true;
+            this.buttonSlet.Click += new System.EventHandler(this.buttonSlet_Click);
             // 
             // buttonsog
             // 
             this.buttonsog.Location = new System.Drawing.Point(416, 5);
-            this.buttonsog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonsog.Margin = new System.Windows.Forms.Padding(4);
             this.buttonsog.Name = "buttonsog";
             this.buttonsog.Size = new System.Drawing.Size(100, 28);
             this.buttonsog.TabIndex = 35;
             this.buttonsog.Text = "Søg";
             this.buttonsog.UseVisualStyleBackColor = true;
+            this.buttonsog.Click += new System.EventHandler(this.buttonsog_Click);
             // 
             // label8
             // 
@@ -88,7 +90,7 @@
             // textBoxBy
             // 
             this.textBoxBy.Location = new System.Drawing.Point(267, 103);
-            this.textBoxBy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxBy.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxBy.Name = "textBoxBy";
             this.textBoxBy.Size = new System.Drawing.Size(248, 22);
             this.textBoxBy.TabIndex = 33;
@@ -96,7 +98,7 @@
             // textBoxAnsvarlig
             // 
             this.textBoxAnsvarlig.Location = new System.Drawing.Point(135, 199);
-            this.textBoxAnsvarlig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAnsvarlig.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAnsvarlig.Name = "textBoxAnsvarlig";
             this.textBoxAnsvarlig.Size = new System.Drawing.Size(380, 22);
             this.textBoxAnsvarlig.TabIndex = 32;
@@ -114,7 +116,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(135, 167);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(380, 22);
             this.textBoxEmail.TabIndex = 30;
@@ -132,7 +134,7 @@
             // textBoxTlf
             // 
             this.textBoxTlf.Location = new System.Drawing.Point(135, 135);
-            this.textBoxTlf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxTlf.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTlf.Name = "textBoxTlf";
             this.textBoxTlf.Size = new System.Drawing.Size(380, 22);
             this.textBoxTlf.TabIndex = 28;
@@ -150,7 +152,7 @@
             // textBoxPostNr
             // 
             this.textBoxPostNr.Location = new System.Drawing.Point(135, 103);
-            this.textBoxPostNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPostNr.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPostNr.Name = "textBoxPostNr";
             this.textBoxPostNr.Size = new System.Drawing.Size(89, 22);
             this.textBoxPostNr.TabIndex = 26;
@@ -168,7 +170,7 @@
             // textBoxGade
             // 
             this.textBoxGade.Location = new System.Drawing.Point(135, 71);
-            this.textBoxGade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxGade.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxGade.Name = "textBoxGade";
             this.textBoxGade.Size = new System.Drawing.Size(380, 22);
             this.textBoxGade.TabIndex = 24;
@@ -186,7 +188,7 @@
             // textBoxNavn
             // 
             this.textBoxNavn.Location = new System.Drawing.Point(135, 39);
-            this.textBoxNavn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNavn.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNavn.Name = "textBoxNavn";
             this.textBoxNavn.Size = new System.Drawing.Size(380, 22);
             this.textBoxNavn.TabIndex = 22;
@@ -204,7 +206,7 @@
             // textBoxCPRCVR
             // 
             this.textBoxCPRCVR.Location = new System.Drawing.Point(135, 7);
-            this.textBoxCPRCVR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCPRCVR.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCPRCVR.Name = "textBoxCPRCVR";
             this.textBoxCPRCVR.Size = new System.Drawing.Size(272, 22);
             this.textBoxCPRCVR.TabIndex = 20;
@@ -222,12 +224,13 @@
             // buttonOpdater
             // 
             this.buttonOpdater.Location = new System.Drawing.Point(537, 546);
-            this.buttonOpdater.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOpdater.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOpdater.Name = "buttonOpdater";
             this.buttonOpdater.Size = new System.Drawing.Size(116, 41);
             this.buttonOpdater.TabIndex = 38;
             this.buttonOpdater.Text = "Opdater";
             this.buttonOpdater.UseVisualStyleBackColor = true;
+            this.buttonOpdater.Click += new System.EventHandler(this.buttonOpdater_Click);
             // 
             // dataGridView1
             // 
@@ -238,7 +241,7 @@
             this.Slut_Dato,
             this.Pris});
             this.dataGridView1.Location = new System.Drawing.Point(20, 231);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(633, 308);
             this.dataGridView1.TabIndex = 39;
@@ -292,7 +295,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxCPRCVR);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Sog_DEB";
             this.Text = "Sog_DEB";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
