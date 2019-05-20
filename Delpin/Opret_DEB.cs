@@ -32,8 +32,13 @@ namespace Delpin
             int tlf = Convert.ToInt32(textBoxTlf.Text);
             string email = textBoxEmail.Text;
             string ansvarlig = textBoxAnsvarlig.Text;
-            control.GemDEB(cprCvr, navn, gade, postnr, by, tlf, email, ansvarlig);
+            Controller.GemDEB(cprCvr, navn, gade, postnr, by, tlf, email, ansvarlig);
             MessageBox.Show("Kunde oprettet");
+        }
+
+        private void textBoxCPRCVR_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

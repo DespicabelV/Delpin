@@ -66,6 +66,7 @@
             this.textBoxCPRCVR.Name = "textBoxCPRCVR";
             this.textBoxCPRCVR.Size = new System.Drawing.Size(272, 22);
             this.textBoxCPRCVR.TabIndex = 1;
+            this.textBoxCPRCVR.TextChanged += new System.EventHandler(this.textBoxCPRCVR_TextChanged);
             // 
             // textBoxNavn
             // 

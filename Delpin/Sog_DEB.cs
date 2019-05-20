@@ -20,7 +20,7 @@ namespace Delpin
         private void buttonsog_Click(object sender, EventArgs e)
         {
             long cprCvr = Convert.ToInt64(textBoxCPRCVR.Text);
-            DEB deb = control.HentDEB(cprCvr);
+            DEB deb = Controller.HentDEB(cprCvr);
             textBoxNavn.Text = deb.Navn;
             textBoxGade.Text = deb.Gade;
             textBoxPostNr.Text = deb.Postnr.ToString();
@@ -34,7 +34,7 @@ namespace Delpin
         private void buttonSlet_Click(object sender, EventArgs e)
         {
             long cprCvr = Convert.ToInt64(textBoxCPRCVR.Text);
-            control.SletDEB(cprCvr);
+            Controller.SletDEB(cprCvr);
             MessageBox.Show("DEB slettet");
         }
 
@@ -48,7 +48,7 @@ namespace Delpin
             int tlf = Convert.ToInt32(textBoxTlf.Text);
             string email = textBoxEmail.Text;
             string ansvarlig = textBoxAnsvarlig.Text;
-            control.UpdateDEB(cprCvr, navn, gade, postnr, by, tlf, email, ansvarlig);
+            Controller.UpdateDEB(cprCvr, navn, gade, postnr, by, tlf, email, ansvarlig);
             MessageBox.Show("DEB opdateret");
         }
     }
