@@ -58,25 +58,31 @@
             // buttonPrint
             // 
             this.buttonPrint.Location = new System.Drawing.Point(355, 48);
-            this.buttonPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPrint.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(100, 28);
             this.buttonPrint.TabIndex = 2;
             this.buttonPrint.Text = "Print";
             this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // dateTimePickerStart
             // 
+            this.dateTimePickerStart.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerStart.Location = new System.Drawing.Point(80, 30);
-            this.dateTimePickerStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerStart.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateTimePickerStart.Size = new System.Drawing.Size(265, 22);
             this.dateTimePickerStart.TabIndex = 3;
             // 
             // dateTimePickerSlut
             // 
+            this.dateTimePickerSlut.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePickerSlut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerSlut.Location = new System.Drawing.Point(80, 68);
-            this.dateTimePickerSlut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerSlut.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerSlut.Name = "dateTimePickerSlut";
             this.dateTimePickerSlut.Size = new System.Drawing.Size(265, 22);
             this.dateTimePickerSlut.TabIndex = 4;
@@ -91,7 +97,7 @@
             this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Leje_Liste";
             this.Text = "Leje_Liste";
             this.ResumeLayout(false);

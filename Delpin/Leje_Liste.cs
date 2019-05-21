@@ -16,5 +16,14 @@ namespace Delpin
         {
             InitializeComponent();
         }
+
+        Temp_Katrine tk = new Temp_Katrine();
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            string start = dateTimePickerStart.Text;
+            string slut = dateTimePickerSlut.Text;
+            string filnavn = start + " til "+ slut;
+            tk.SkrivOpret(filnavn, start, slut);
+        }
     }
 }
