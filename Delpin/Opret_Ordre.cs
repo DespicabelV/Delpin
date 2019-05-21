@@ -110,10 +110,9 @@ namespace Delpin
 
         private void buttonOpretOrdre_Click(object sender, EventArgs e)
         {
-            string dato, gade, byen, res;
-            int levering, postnr;
+            string dato, gade, byen;
+            int levering, postnr, ordrenr;
             long cprcvr;
-            res = "";
 
             dato = DateTime.Now.ToString("yyyy-MM-dd");
             gade = textBoxGade.Text;
@@ -130,12 +129,21 @@ namespace Delpin
                 levering = 0;
             }
 
-            for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
+            test.Opret_Ordre_OO(dato, levering, gade, postnr, byen, cprcvr, out ordrenr);
+
+            string startdato, slutdato, resnavn;
+            int resnr, pris;
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
-                res = res + $"{dataGridView1.Rows[i].Cells["RES_Nr"].Value}|";
+                resnr     = Convert.ToInt32(dataGridView1.Rows[i].Cells["Res_Nr"].Value);
+                resnavn   = Convert.ToString(dataGridView1.Rows[i].Cells["Navn"].Value);
+                startdato = Convert.ToString(dataGridView1.Rows[i].Cells["Start"].Value);
+                slutdato  = Convert.ToString(dataGridView1.Rows[i].Cells["Slut"].Value);
+                pris      = Convert.ToInt32(dataGridView1.Rows[i].Cells["Pris"].Value);
+                
+            test.Opret_Ordre_Dato(ordrenr, resnr,resnavn, startdato, slutdato, pris);
             }
-            
-            MessageBox.Show(test.Opret_Ordre_OO(dato, levering, gade, postnr, byen, res, cprcvr));
+            MessageBox.Show("Ordre oprettet");
         }
     }
 }

@@ -32,12 +32,13 @@
             this.textBoxOrdreNr = new System.Windows.Forms.TextBox();
             this.buttonSog = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonKvitering = new System.Windows.Forms.Button();
+            this.buttonFaktura = new System.Windows.Forms.Button();
+            this.ResNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Navn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pris_Pr_Dag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Start_Dato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Slut_Dato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonKvitering = new System.Windows.Forms.Button();
-            this.buttonFaktura = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // textBoxOrdreNr
             // 
             this.textBoxOrdreNr.Location = new System.Drawing.Point(124, 7);
-            this.textBoxOrdreNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxOrdreNr.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOrdreNr.Name = "textBoxOrdreNr";
             this.textBoxOrdreNr.Size = new System.Drawing.Size(399, 22);
             this.textBoxOrdreNr.TabIndex = 1;
@@ -62,7 +63,7 @@
             // buttonSog
             // 
             this.buttonSog.Location = new System.Drawing.Point(532, 5);
-            this.buttonSog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSog.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSog.Name = "buttonSog";
             this.buttonSog.Size = new System.Drawing.Size(100, 28);
             this.buttonSog.TabIndex = 2;
@@ -73,15 +74,42 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ResNr,
             this.Navn,
             this.Pris_Pr_Dag,
             this.Start_Dato,
             this.Slut_Dato});
             this.dataGridView1.Location = new System.Drawing.Point(20, 41);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(612, 345);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // buttonKvitering
+            // 
+            this.buttonKvitering.Location = new System.Drawing.Point(525, 393);
+            this.buttonKvitering.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonKvitering.Name = "buttonKvitering";
+            this.buttonKvitering.Size = new System.Drawing.Size(107, 42);
+            this.buttonKvitering.TabIndex = 4;
+            this.buttonKvitering.Text = "Kvitering";
+            this.buttonKvitering.UseVisualStyleBackColor = true;
+            // 
+            // buttonFaktura
+            // 
+            this.buttonFaktura.Location = new System.Drawing.Point(411, 393);
+            this.buttonFaktura.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFaktura.Name = "buttonFaktura";
+            this.buttonFaktura.Size = new System.Drawing.Size(107, 42);
+            this.buttonFaktura.TabIndex = 5;
+            this.buttonFaktura.Text = "Faktura";
+            this.buttonFaktura.UseVisualStyleBackColor = true;
+            // 
+            // ResNr
+            // 
+            this.ResNr.HeaderText = "Res Nr.";
+            this.ResNr.Name = "ResNr";
+            this.ResNr.ReadOnly = true;
             // 
             // Navn
             // 
@@ -107,26 +135,6 @@
             this.Slut_Dato.Name = "Slut_Dato";
             this.Slut_Dato.ReadOnly = true;
             // 
-            // buttonKvitering
-            // 
-            this.buttonKvitering.Location = new System.Drawing.Point(525, 393);
-            this.buttonKvitering.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonKvitering.Name = "buttonKvitering";
-            this.buttonKvitering.Size = new System.Drawing.Size(107, 42);
-            this.buttonKvitering.TabIndex = 4;
-            this.buttonKvitering.Text = "Kvitering";
-            this.buttonKvitering.UseVisualStyleBackColor = true;
-            // 
-            // buttonFaktura
-            // 
-            this.buttonFaktura.Location = new System.Drawing.Point(411, 393);
-            this.buttonFaktura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonFaktura.Name = "buttonFaktura";
-            this.buttonFaktura.Size = new System.Drawing.Size(107, 42);
-            this.buttonFaktura.TabIndex = 5;
-            this.buttonFaktura.Text = "Faktura";
-            this.buttonFaktura.UseVisualStyleBackColor = true;
-            // 
             // Sog_Ordre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -138,7 +146,7 @@
             this.Controls.Add(this.buttonSog);
             this.Controls.Add(this.textBoxOrdreNr);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Sog_Ordre";
             this.Text = "Sog_Ordre";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -153,11 +161,12 @@
         private System.Windows.Forms.TextBox textBoxOrdreNr;
         private System.Windows.Forms.Button buttonSog;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonKvitering;
+        private System.Windows.Forms.Button buttonFaktura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ResNr;
         private System.Windows.Forms.DataGridViewTextBoxColumn Navn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pris_Pr_Dag;
         private System.Windows.Forms.DataGridViewTextBoxColumn Start_Dato;
         private System.Windows.Forms.DataGridViewTextBoxColumn Slut_Dato;
-        private System.Windows.Forms.Button buttonKvitering;
-        private System.Windows.Forms.Button buttonFaktura;
     }
 }
