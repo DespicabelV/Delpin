@@ -133,6 +133,7 @@ namespace Delpin
 
             string startdato, slutdato, resnavn;
             int resnr, pris;
+
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
                 resnr     = Convert.ToInt32(dataGridView1.Rows[i].Cells["Res_Nr"].Value);
@@ -141,7 +142,7 @@ namespace Delpin
                 slutdato  = Convert.ToString(dataGridView1.Rows[i].Cells["Slut"].Value);
                 pris      = Convert.ToInt32(dataGridView1.Rows[i].Cells["Pris"].Value);
                 
-            test.Opret_Ordre_Dato(ordrenr, resnr,resnavn, startdato, slutdato, pris);
+            test.Opret_Ordre_LejeOrdreLinjer(ordrenr, resnr,resnavn, startdato, slutdato, pris);
             }
             MessageBox.Show("Ordre oprettet");
         }

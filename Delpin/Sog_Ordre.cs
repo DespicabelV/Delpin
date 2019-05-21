@@ -12,9 +12,19 @@ namespace Delpin
 {
     public partial class Sog_Ordre : Form
     {
+        Temp_Viggo test = new Temp_Viggo();
         public Sog_Ordre()
         {
             InitializeComponent();
+        }
+
+        private void buttonSog_Click(object sender, EventArgs e)
+        {
+            string resnavn, startDato, slutDato;
+            int resnr;
+            double pris;
+            // opret et objekt der hedder lejeordre og smid data i den så den kan loppes her og skrives i datagridview
+            test.Sog_Ordre_Sog(Convert.ToInt32(textBoxOrdreNr.Text), out resnr, out resnavn, out pris, out startDato, out slutDato);
         }
     }
 }

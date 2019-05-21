@@ -91,7 +91,7 @@ namespace Delpin
 
         }
 
-        public void Opret_Ordre_Dato(int ordrenr, int resnr, string resnavn, string startdato, string slutdato, int pris)
+        public void Opret_Ordre_LejeOrdreLinjer(int ordrenr, int resnr, string resnavn, string startdato, string slutdato, int pris)
         {
             try
             {
@@ -113,6 +113,60 @@ namespace Delpin
             finally
             {
                 conn.Close();
+            }
+        }
+
+        public void Sog_Ordre_Sog(int ID, out int resnr, out string navn, out double pris, out string start, out string slut)
+        {
+            resnr = 0;
+            navn = "";
+            pris = 0;
+            start = "";
+            slut = "";
+            try
+            {
+                conn = new SqlConnection(Connection());
+                conn.Open();
+                SqlCommand Opret_Ordre_Sog = new SqlCommand();
+                Opret_Ordre_Sog.CommandText = $"select resnr, resnavn, startDato, slutDato, pris from LejeOrdreLinjer where ordrenr = {ID}";
+                Opret_Ordre_Sog.Connection = conn;
+                reader = Opret_Ordre_Sog.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    resnr = Convert.ToInt32(reader["resnr"]);
+                    navn  = reader["resnavn"].ToString();
+                    pris  = Convert.ToInt32(reader["pris"]);
+                    start = reader["startDato"].ToString();
+                    slut  = reader["slutDato"].ToString();
+                }
+            }
+            catch (SqlException ex)
+            {
+
+                Console.WriteLine("Der er sket en fejl i din SQL");
+                //Udskriver fejltypen:
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        class LejsList
+        {
+            private int resnr;
+            private string navn, start, slut;
+            private double pris;
+
+            public LejsList(int resnr, string navn, double pris, string start, string slut)
+            {
+                this.resnr = resnr;
+                this.navn = navn;
+                this.pris = pris;
+                this.start = start;
+                this.slut = slut;
             }
         }
     }
