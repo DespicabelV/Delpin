@@ -60,6 +60,7 @@
     <Compile Include="Hovedmenu.Designer.cs">
       <DependentUpon>Hovedmenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="LejeList.cs" />
     <Compile Include="Leje_Liste.cs">
       <SubType>Form</SubType>
     </Compile>
