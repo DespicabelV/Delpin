@@ -23,8 +23,8 @@ namespace Delpin
             string start = dateTimePickerStart.Text;
             string slut = dateTimePickerSlut.Text;
             string filnavn = start + " til "+ slut;
-            string meddelse = c.SkrivOpretFil(filnavn, start, slut);
-            MessageBox.Show(meddelse);
+            c.SkrivOpretFil(filnavn, start, slut);
+            
         }
     }
 }

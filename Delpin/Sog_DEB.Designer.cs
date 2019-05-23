@@ -47,23 +47,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonOpdater = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ordrenrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lejeOrdreBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.delpinasDataSet1 = new Delpin.delpinasDataSet1();
             this.lejeOrdreBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.delpinasDataSet = new Delpin.delpinasDataSet();
-            this.lejeOrdreTableAdapter = new Delpin.delpinasDataSetTableAdapters.LejeOrdreTableAdapter();
+            //this.delpinasDataSet = new Delpin.delpinasDataSet();
+            //this.lejeOrdreTableAdapter = new Delpin.delpinasDataSetTableAdapters.LejeOrdreTableAdapter();
             this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
             this.cprCvrToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.cprCvrToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.lejeOrdreTableAdapter1 = new Delpin.delpinasDataSet1TableAdapters.LejeOrdreTableAdapter();
+            this.ordrenrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.delpinasDataSet)).BeginInit();
             this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -240,19 +240,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(633, 308);
             this.dataGridView1.TabIndex = 39;
             // 
-            // ordrenrDataGridViewTextBoxColumn
-            // 
-            this.ordrenrDataGridViewTextBoxColumn.DataPropertyName = "ordrenr";
-            this.ordrenrDataGridViewTextBoxColumn.HeaderText = "Ordre Nr";
-            this.ordrenrDataGridViewTextBoxColumn.Name = "ordrenrDataGridViewTextBoxColumn";
-            this.ordrenrDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // datoDataGridViewTextBoxColumn
-            // 
-            this.datoDataGridViewTextBoxColumn.DataPropertyName = "dato";
-            this.datoDataGridViewTextBoxColumn.HeaderText = "Dato";
-            this.datoDataGridViewTextBoxColumn.Name = "datoDataGridViewTextBoxColumn";
-            // 
             // lejeOrdreBindingSource1
             // 
             this.lejeOrdreBindingSource1.DataMember = "LejeOrdre";
@@ -266,16 +253,16 @@
             // lejeOrdreBindingSource
             // 
             this.lejeOrdreBindingSource.DataMember = "LejeOrdre";
-            this.lejeOrdreBindingSource.DataSource = this.delpinasDataSet;
+            //this.lejeOrdreBindingSource.DataSource = this.delpinasDataSet;
             // 
             // delpinasDataSet
             // 
-            this.delpinasDataSet.DataSetName = "delpinasDataSet";
-            this.delpinasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.delpinasDataSet.DataSetName = "delpinasDataSet";
+            //this.delpinasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lejeOrdreTableAdapter
             // 
-            this.lejeOrdreTableAdapter.ClearBeforeFill = true;
+            //this.lejeOrdreTableAdapter.ClearBeforeFill = true;
             // 
             // fillByToolStrip
             // 
@@ -315,6 +302,20 @@
             // 
             this.lejeOrdreTableAdapter1.ClearBeforeFill = true;
             // 
+            // ordrenrDataGridViewTextBoxColumn
+            // 
+            this.ordrenrDataGridViewTextBoxColumn.DataPropertyName = "ordrenr";
+            this.ordrenrDataGridViewTextBoxColumn.HeaderText = "Ordre Nr";
+            this.ordrenrDataGridViewTextBoxColumn.Name = "ordrenrDataGridViewTextBoxColumn";
+            this.ordrenrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // datoDataGridViewTextBoxColumn
+            // 
+            this.datoDataGridViewTextBoxColumn.DataPropertyName = "dato";
+            this.datoDataGridViewTextBoxColumn.HeaderText = "Dato";
+            this.datoDataGridViewTextBoxColumn.Name = "datoDataGridViewTextBoxColumn";
+            this.datoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Sog_DEB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -347,7 +348,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.delpinasDataSet)).EndInit();
             this.fillByToolStrip.ResumeLayout(false);
             this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -375,11 +376,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonOpdater;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private delpinasDataSet delpinasDataSet;
+        //private delpinasDataSet delpinasDataSet;
         private System.Windows.Forms.BindingSource lejeOrdreBindingSource;
-        private delpinasDataSetTableAdapters.LejeOrdreTableAdapter lejeOrdreTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ordrenrDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datoDataGridViewTextBoxColumn;
+        //private delpinasDataSetTableAdapters.LejeOrdreTableAdapter lejeOrdreTableAdapter;
         private delpinasDataSet1 delpinasDataSet1;
         private System.Windows.Forms.BindingSource lejeOrdreBindingSource1;
         private delpinasDataSet1TableAdapters.LejeOrdreTableAdapter lejeOrdreTableAdapter1;
@@ -387,5 +386,7 @@
         private System.Windows.Forms.ToolStripLabel cprCvrToolStripLabel;
         private System.Windows.Forms.ToolStripTextBox cprCvrToolStripTextBox;
         private System.Windows.Forms.ToolStripButton fillByToolStripButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ordrenrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datoDataGridViewTextBoxColumn;
     }
 }

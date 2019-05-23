@@ -49,11 +49,6 @@
     <Compile Include="Controller.cs" />
     <Compile Include="Database_Manager.cs" />
     <Compile Include="DEB.cs" />
-    <Compile Include="delpinasDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>delpinasDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="delpinasDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -136,17 +131,6 @@
     <EmbeddedResource Include="Sog_RES.resx">
       <DependentUpon>Sog_RES.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="delpinasDataSet.xsc">
-      <DependentUpon>delpinasDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="delpinasDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>delpinasDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="delpinasDataSet.xss">
-      <DependentUpon>delpinasDataSet.xsd</DependentUpon>
-    </None>
     <None Include="delpinasDataSet1.xsc">
       <DependentUpon>delpinasDataSet1.xsd</DependentUpon>
     </None>

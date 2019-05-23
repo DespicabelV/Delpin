@@ -35,18 +35,17 @@ namespace Delpin
             dbm.UpdateDEB(deb);
         }
 
-        public string SkrivOpretFil(string filnavn, string start, string slut)
+        public void SkrivOpretFil(string filnavn, string start, string slut)
         {
             //Opretter filnavn. Filnavnet hedder startdato + slutdato. 
             filnavn = $"{filnavn}.txt";
             StreamWriter outputStream = null;
-            try
-            {
-                outputStream = new StreamWriter(filnavn);
-                List<string> linje = new List<string>();
+            
+            outputStream = new StreamWriter(filnavn);
+            List<string> linje = new List<string>();
 
-                //Der laves en liste som bliver udfyldt med informationer fra databasen. 
-                linje = dbm.HentLejeListe(start, slut);
+            //Der laves en liste som bliver udfyldt med informationer fra databasen. 
+            linje = dbm.HentLejeListe(start, slut);
                 for (int i = 0; i < linje.Count; i++)
                 {
                     //Udskriver hver linje i listen til en fil.
@@ -54,17 +53,13 @@ namespace Delpin
 
                 }
 
-                return "Liste hentet, gå til filer for at åbne den.";
-            }
-            catch (FileNotFoundException)
-            {
-                return "Fejl: Text-filen findes ikke.";
-            }
-            finally
-            {
-                if (outputStream != null)
+             string filename = filnavn;
+             System.Diagnostics.Process.Start(filnavn);
+
+             if (outputStream != null)
                     outputStream.Close();
-            }
+
+        
 
         }
 
