@@ -49,10 +49,10 @@
     <Compile Include="Controller.cs" />
     <Compile Include="Database_Manager.cs" />
     <Compile Include="DEB.cs" />
-    <Compile Include="delpinasDataSet.Designer.cs">
+    <Compile Include="delpinasDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>delpinasDataSet.xsd</DependentUpon>
+      <DependentUpon>delpinasDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="delpinasDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -70,6 +70,7 @@
     <Compile Include="Hovedmenu.Designer.cs">
       <DependentUpon>Hovedmenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="LejeList.cs" />
     <Compile Include="Leje_Liste.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,16 +142,16 @@
     <EmbeddedResource Include="Sog_RES.resx">
       <DependentUpon>Sog_RES.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="delpinasDataSet.xsc">
-      <DependentUpon>delpinasDataSet.xsd</DependentUpon>
+    <None Include="delpinasDataSet1.xsc">
+      <DependentUpon>delpinasDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="delpinasDataSet.xsd">
+    <None Include="delpinasDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>delpinasDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>delpinasDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="delpinasDataSet.xss">
-      <DependentUpon>delpinasDataSet.xsd</DependentUpon>
+    <None Include="delpinasDataSet1.xss">
+      <DependentUpon>delpinasDataSet1.xsd</DependentUpon>
     </None>
     <None Include="delpinasDataSet1.xsc">
       <DependentUpon>delpinasDataSet1.xsd</DependentUpon>

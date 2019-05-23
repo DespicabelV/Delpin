@@ -24,11 +24,7 @@ namespace Delpin {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class delpinasDataSet1 : global::System.Data.DataSet {
         
-        private LejeOrdreLinjerDataTable tableLejeOrdreLinjer;
-        
-        private ResDataTable tableRes;
-        
-        private global::System.Data.DataRelation relationFK__Res__tilbehorRes__66603565;
+        private LejeOrdreDataTable tableLejeOrdre;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -58,11 +54,8 @@ namespace Delpin {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["LejeOrdreLinjer"] != null)) {
-                    base.Tables.Add(new LejeOrdreLinjerDataTable(ds.Tables["LejeOrdreLinjer"]));
-                }
-                if ((ds.Tables["Res"] != null)) {
-                    base.Tables.Add(new ResDataTable(ds.Tables["Res"]));
+                if ((ds.Tables["LejeOrdre"] != null)) {
+                    base.Tables.Add(new LejeOrdreDataTable(ds.Tables["LejeOrdre"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -86,19 +79,9 @@ namespace Delpin {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public LejeOrdreLinjerDataTable LejeOrdreLinjer {
+        public LejeOrdreDataTable LejeOrdre {
             get {
-                return this.tableLejeOrdreLinjer;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ResDataTable Res {
-            get {
-                return this.tableRes;
+                return this.tableLejeOrdre;
             }
         }
         
@@ -169,11 +152,8 @@ namespace Delpin {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["LejeOrdreLinjer"] != null)) {
-                    base.Tables.Add(new LejeOrdreLinjerDataTable(ds.Tables["LejeOrdreLinjer"]));
-                }
-                if ((ds.Tables["Res"] != null)) {
-                    base.Tables.Add(new ResDataTable(ds.Tables["Res"]));
+                if ((ds.Tables["LejeOrdre"] != null)) {
+                    base.Tables.Add(new LejeOrdreDataTable(ds.Tables["LejeOrdre"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -208,19 +188,12 @@ namespace Delpin {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableLejeOrdreLinjer = ((LejeOrdreLinjerDataTable)(base.Tables["LejeOrdreLinjer"]));
+            this.tableLejeOrdre = ((LejeOrdreDataTable)(base.Tables["LejeOrdre"]));
             if ((initTable == true)) {
-                if ((this.tableLejeOrdreLinjer != null)) {
-                    this.tableLejeOrdreLinjer.InitVars();
+                if ((this.tableLejeOrdre != null)) {
+                    this.tableLejeOrdre.InitVars();
                 }
             }
-            this.tableRes = ((ResDataTable)(base.Tables["Res"]));
-            if ((initTable == true)) {
-                if ((this.tableRes != null)) {
-                    this.tableRes.InitVars();
-                }
-            }
-            this.relationFK__Res__tilbehorRes__66603565 = this.Relations["FK__Res__tilbehorRes__66603565"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -231,25 +204,13 @@ namespace Delpin {
             this.Namespace = "http://tempuri.org/delpinasDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableLejeOrdreLinjer = new LejeOrdreLinjerDataTable();
-            base.Tables.Add(this.tableLejeOrdreLinjer);
-            this.tableRes = new ResDataTable();
-            base.Tables.Add(this.tableRes);
-            this.relationFK__Res__tilbehorRes__66603565 = new global::System.Data.DataRelation("FK__Res__tilbehorRes__66603565", new global::System.Data.DataColumn[] {
-                        this.tableRes.resnrColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRes.tilbehorResColumn}, false);
-            this.Relations.Add(this.relationFK__Res__tilbehorRes__66603565);
+            this.tableLejeOrdre = new LejeOrdreDataTable();
+            base.Tables.Add(this.tableLejeOrdre);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeLejeOrdreLinjer() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeRes() {
+        private bool ShouldSerializeLejeOrdre() {
             return false;
         }
         
@@ -309,26 +270,23 @@ namespace Delpin {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void LejeOrdreLinjerRowChangeEventHandler(object sender, LejeOrdreLinjerRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void ResRowChangeEventHandler(object sender, ResRowChangeEvent e);
+        public delegate void LejeOrdreRowChangeEventHandler(object sender, LejeOrdreRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class LejeOrdreLinjerDataTable : global::System.Data.TypedTableBase<LejeOrdreLinjerRow> {
+        public partial class LejeOrdreDataTable : global::System.Data.TypedTableBase<LejeOrdreRow> {
             
-            private global::System.Data.DataColumn columnstartDato;
+            private global::System.Data.DataColumn columnordrenr;
             
-            private global::System.Data.DataColumn columnslutDato;
+            private global::System.Data.DataColumn columndato;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LejeOrdreLinjerDataTable() {
-                this.TableName = "LejeOrdreLinjer";
+            public LejeOrdreDataTable() {
+                this.TableName = "LejeOrdre";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -336,7 +294,7 @@ namespace Delpin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal LejeOrdreLinjerDataTable(global::System.Data.DataTable table) {
+            internal LejeOrdreDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -353,24 +311,24 @@ namespace Delpin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected LejeOrdreLinjerDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected LejeOrdreDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn startDatoColumn {
+            public global::System.Data.DataColumn ordrenrColumn {
                 get {
-                    return this.columnstartDato;
+                    return this.columnordrenr;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn slutDatoColumn {
+            public global::System.Data.DataColumn datoColumn {
                 get {
-                    return this.columnslutDato;
+                    return this.columndato;
                 }
             }
             
@@ -385,46 +343,53 @@ namespace Delpin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LejeOrdreLinjerRow this[int index] {
+            public LejeOrdreRow this[int index] {
                 get {
-                    return ((LejeOrdreLinjerRow)(this.Rows[index]));
+                    return ((LejeOrdreRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event LejeOrdreLinjerRowChangeEventHandler LejeOrdreLinjerRowChanging;
+            public event LejeOrdreRowChangeEventHandler LejeOrdreRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event LejeOrdreLinjerRowChangeEventHandler LejeOrdreLinjerRowChanged;
+            public event LejeOrdreRowChangeEventHandler LejeOrdreRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event LejeOrdreLinjerRowChangeEventHandler LejeOrdreLinjerRowDeleting;
+            public event LejeOrdreRowChangeEventHandler LejeOrdreRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event LejeOrdreLinjerRowChangeEventHandler LejeOrdreLinjerRowDeleted;
+            public event LejeOrdreRowChangeEventHandler LejeOrdreRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddLejeOrdreLinjerRow(LejeOrdreLinjerRow row) {
+            public void AddLejeOrdreRow(LejeOrdreRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LejeOrdreLinjerRow AddLejeOrdreLinjerRow(System.DateTime startDato, System.DateTime slutDato) {
-                LejeOrdreLinjerRow rowLejeOrdreLinjerRow = ((LejeOrdreLinjerRow)(this.NewRow()));
+            public LejeOrdreRow AddLejeOrdreRow(System.DateTime dato) {
+                LejeOrdreRow rowLejeOrdreRow = ((LejeOrdreRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        startDato,
-                        slutDato};
-                rowLejeOrdreLinjerRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowLejeOrdreLinjerRow);
-                return rowLejeOrdreLinjerRow;
+                        null,
+                        dato};
+                rowLejeOrdreRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowLejeOrdreRow);
+                return rowLejeOrdreRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public LejeOrdreRow FindByordrenr(int ordrenr) {
+                return ((LejeOrdreRow)(this.Rows.Find(new object[] {
+                            ordrenr})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                LejeOrdreLinjerDataTable cln = ((LejeOrdreLinjerDataTable)(base.Clone()));
+                LejeOrdreDataTable cln = ((LejeOrdreDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -432,353 +397,57 @@ namespace Delpin {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new LejeOrdreLinjerDataTable();
+                return new LejeOrdreDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnstartDato = base.Columns["startDato"];
-                this.columnslutDato = base.Columns["slutDato"];
+                this.columnordrenr = base.Columns["ordrenr"];
+                this.columndato = base.Columns["dato"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnstartDato = new global::System.Data.DataColumn("startDato", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstartDato);
-                this.columnslutDato = new global::System.Data.DataColumn("slutDato", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnslutDato);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LejeOrdreLinjerRow NewLejeOrdreLinjerRow() {
-                return ((LejeOrdreLinjerRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new LejeOrdreLinjerRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(LejeOrdreLinjerRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.LejeOrdreLinjerRowChanged != null)) {
-                    this.LejeOrdreLinjerRowChanged(this, new LejeOrdreLinjerRowChangeEvent(((LejeOrdreLinjerRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.LejeOrdreLinjerRowChanging != null)) {
-                    this.LejeOrdreLinjerRowChanging(this, new LejeOrdreLinjerRowChangeEvent(((LejeOrdreLinjerRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.LejeOrdreLinjerRowDeleted != null)) {
-                    this.LejeOrdreLinjerRowDeleted(this, new LejeOrdreLinjerRowChangeEvent(((LejeOrdreLinjerRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.LejeOrdreLinjerRowDeleting != null)) {
-                    this.LejeOrdreLinjerRowDeleting(this, new LejeOrdreLinjerRowChangeEvent(((LejeOrdreLinjerRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveLejeOrdreLinjerRow(LejeOrdreLinjerRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                delpinasDataSet1 ds = new delpinasDataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "LejeOrdreLinjerDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ResDataTable : global::System.Data.TypedTableBase<ResRow> {
-            
-            private global::System.Data.DataColumn columnresnr;
-            
-            private global::System.Data.DataColumn columnpris;
-            
-            private global::System.Data.DataColumn columnnavn;
-            
-            private global::System.Data.DataColumn columntilbehorRes;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ResDataTable() {
-                this.TableName = "Res";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal ResDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected ResDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn resnrColumn {
-                get {
-                    return this.columnresnr;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn prisColumn {
-                get {
-                    return this.columnpris;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn navnColumn {
-                get {
-                    return this.columnnavn;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn tilbehorResColumn {
-                get {
-                    return this.columntilbehorRes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ResRow this[int index] {
-                get {
-                    return ((ResRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ResRowChangeEventHandler ResRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ResRowChangeEventHandler ResRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ResRowChangeEventHandler ResRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ResRowChangeEventHandler ResRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddResRow(ResRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ResRow AddResRow(int resnr, int pris, string navn, ResRow parentResRowByFK__Res__tilbehorRes__66603565) {
-                ResRow rowResRow = ((ResRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        resnr,
-                        pris,
-                        navn,
-                        null};
-                if ((parentResRowByFK__Res__tilbehorRes__66603565 != null)) {
-                    columnValuesArray[3] = parentResRowByFK__Res__tilbehorRes__66603565[0];
-                }
-                rowResRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowResRow);
-                return rowResRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ResRow FindByresnr(int resnr) {
-                return ((ResRow)(this.Rows.Find(new object[] {
-                            resnr})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                ResDataTable cln = ((ResDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new ResDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal void InitVars() {
-                this.columnresnr = base.Columns["resnr"];
-                this.columnpris = base.Columns["pris"];
-                this.columnnavn = base.Columns["navn"];
-                this.columntilbehorRes = base.Columns["tilbehorRes"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            private void InitClass() {
-                this.columnresnr = new global::System.Data.DataColumn("resnr", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnresnr);
-                this.columnpris = new global::System.Data.DataColumn("pris", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpris);
-                this.columnnavn = new global::System.Data.DataColumn("navn", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnavn);
-                this.columntilbehorRes = new global::System.Data.DataColumn("tilbehorRes", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntilbehorRes);
+                this.columnordrenr = new global::System.Data.DataColumn("ordrenr", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnordrenr);
+                this.columndato = new global::System.Data.DataColumn("dato", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndato);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnresnr}, true));
-                this.columnresnr.AllowDBNull = false;
-                this.columnresnr.Unique = true;
-                this.columnnavn.MaxLength = 100;
+                                this.columnordrenr}, true));
+                this.columnordrenr.AutoIncrement = true;
+                this.columnordrenr.AutoIncrementSeed = -1;
+                this.columnordrenr.AutoIncrementStep = -1;
+                this.columnordrenr.AllowDBNull = false;
+                this.columnordrenr.ReadOnly = true;
+                this.columnordrenr.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ResRow NewResRow() {
-                return ((ResRow)(this.NewRow()));
+            public LejeOrdreRow NewLejeOrdreRow() {
+                return ((LejeOrdreRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ResRow(builder);
+                return new LejeOrdreRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ResRow);
+                return typeof(LejeOrdreRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ResRowChanged != null)) {
-                    this.ResRowChanged(this, new ResRowChangeEvent(((ResRow)(e.Row)), e.Action));
+                if ((this.LejeOrdreRowChanged != null)) {
+                    this.LejeOrdreRowChanged(this, new LejeOrdreRowChangeEvent(((LejeOrdreRow)(e.Row)), e.Action));
                 }
             }
             
@@ -786,8 +455,8 @@ namespace Delpin {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ResRowChanging != null)) {
-                    this.ResRowChanging(this, new ResRowChangeEvent(((ResRow)(e.Row)), e.Action));
+                if ((this.LejeOrdreRowChanging != null)) {
+                    this.LejeOrdreRowChanging(this, new LejeOrdreRowChangeEvent(((LejeOrdreRow)(e.Row)), e.Action));
                 }
             }
             
@@ -795,8 +464,8 @@ namespace Delpin {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ResRowDeleted != null)) {
-                    this.ResRowDeleted(this, new ResRowChangeEvent(((ResRow)(e.Row)), e.Action));
+                if ((this.LejeOrdreRowDeleted != null)) {
+                    this.LejeOrdreRowDeleted(this, new LejeOrdreRowChangeEvent(((LejeOrdreRow)(e.Row)), e.Action));
                 }
             }
             
@@ -804,14 +473,14 @@ namespace Delpin {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ResRowDeleting != null)) {
-                    this.ResRowDeleting(this, new ResRowChangeEvent(((ResRow)(e.Row)), e.Action));
+                if ((this.LejeOrdreRowDeleting != null)) {
+                    this.LejeOrdreRowDeleting(this, new LejeOrdreRowChangeEvent(((LejeOrdreRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveResRow(ResRow row) {
+            public void RemoveLejeOrdreRow(LejeOrdreRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -838,7 +507,7 @@ namespace Delpin {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ResDataTable";
+                attribute2.FixedValue = "LejeOrdreDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -882,203 +551,54 @@ namespace Delpin {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class LejeOrdreLinjerRow : global::System.Data.DataRow {
+        public partial class LejeOrdreRow : global::System.Data.DataRow {
             
-            private LejeOrdreLinjerDataTable tableLejeOrdreLinjer;
+            private LejeOrdreDataTable tableLejeOrdre;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal LejeOrdreLinjerRow(global::System.Data.DataRowBuilder rb) : 
+            internal LejeOrdreRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableLejeOrdreLinjer = ((LejeOrdreLinjerDataTable)(this.Table));
+                this.tableLejeOrdre = ((LejeOrdreDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime startDato {
+            public int ordrenr {
+                get {
+                    return ((int)(this[this.tableLejeOrdre.ordrenrColumn]));
+                }
+                set {
+                    this[this.tableLejeOrdre.ordrenrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime dato {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableLejeOrdreLinjer.startDatoColumn]));
+                        return ((global::System.DateTime)(this[this.tableLejeOrdre.datoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'startDato\' in table \'LejeOrdreLinjer\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'dato\' in table \'LejeOrdre\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLejeOrdreLinjer.startDatoColumn] = value;
+                    this[this.tableLejeOrdre.datoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime slutDato {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableLejeOrdreLinjer.slutDatoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'slutDato\' in table \'LejeOrdreLinjer\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableLejeOrdreLinjer.slutDatoColumn] = value;
-                }
+            public bool IsdatoNull() {
+                return this.IsNull(this.tableLejeOrdre.datoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsstartDatoNull() {
-                return this.IsNull(this.tableLejeOrdreLinjer.startDatoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetstartDatoNull() {
-                this[this.tableLejeOrdreLinjer.startDatoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsslutDatoNull() {
-                return this.IsNull(this.tableLejeOrdreLinjer.slutDatoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetslutDatoNull() {
-                this[this.tableLejeOrdreLinjer.slutDatoColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class ResRow : global::System.Data.DataRow {
-            
-            private ResDataTable tableRes;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal ResRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableRes = ((ResDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int resnr {
-                get {
-                    return ((int)(this[this.tableRes.resnrColumn]));
-                }
-                set {
-                    this[this.tableRes.resnrColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int pris {
-                get {
-                    try {
-                        return ((int)(this[this.tableRes.prisColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pris\' in table \'Res\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRes.prisColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string navn {
-                get {
-                    try {
-                        return ((string)(this[this.tableRes.navnColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'navn\' in table \'Res\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRes.navnColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int tilbehorRes {
-                get {
-                    try {
-                        return ((int)(this[this.tableRes.tilbehorResColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'tilbehorRes\' in table \'Res\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRes.tilbehorResColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ResRow ResRowParent {
-                get {
-                    return ((ResRow)(this.GetParentRow(this.Table.ParentRelations["FK__Res__tilbehorRes__66603565"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Res__tilbehorRes__66603565"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsprisNull() {
-                return this.IsNull(this.tableRes.prisColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetprisNull() {
-                this[this.tableRes.prisColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsnavnNull() {
-                return this.IsNull(this.tableRes.navnColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetnavnNull() {
-                this[this.tableRes.navnColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IstilbehorResNull() {
-                return this.IsNull(this.tableRes.tilbehorResColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SettilbehorResNull() {
-                this[this.tableRes.tilbehorResColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ResRow[] GetResRows() {
-                if ((this.Table.ChildRelations["FK__Res__tilbehorRes__66603565"] == null)) {
-                    return new ResRow[0];
-                }
-                else {
-                    return ((ResRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Res__tilbehorRes__66603565"])));
-                }
+            public void SetdatoNull() {
+                this[this.tableLejeOrdre.datoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1086,56 +606,22 @@ namespace Delpin {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class LejeOrdreLinjerRowChangeEvent : global::System.EventArgs {
+        public class LejeOrdreRowChangeEvent : global::System.EventArgs {
             
-            private LejeOrdreLinjerRow eventRow;
+            private LejeOrdreRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LejeOrdreLinjerRowChangeEvent(LejeOrdreLinjerRow row, global::System.Data.DataRowAction action) {
+            public LejeOrdreRowChangeEvent(LejeOrdreRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LejeOrdreLinjerRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class ResRowChangeEvent : global::System.EventArgs {
-            
-            private ResRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ResRowChangeEvent(ResRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ResRow Row {
+            public LejeOrdreRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1163,7 +649,7 @@ namespace Delpin.delpinasDataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class LejeOrdreLinjerTableAdapter : global::System.ComponentModel.Component {
+    public partial class LejeOrdreTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1177,7 +663,7 @@ namespace Delpin.delpinasDataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public LejeOrdreLinjerTableAdapter() {
+        public LejeOrdreTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1274,286 +760,35 @@ namespace Delpin.delpinasDataSet1TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "LejeOrdreLinjer";
-            tableMapping.ColumnMappings.Add("startDato", "startDato");
-            tableMapping.ColumnMappings.Add("slutDato", "slutDato");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[LejeOrdreLinjer] ([startDato], [slutDato]) VALUES (@startDato," +
-                " @slutDato)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@startDato", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "startDato", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@slutDato", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "slutDato", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Delpin.Properties.Settings.Default.delpinasConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT startDato, slutDato FROM dbo.LejeOrdreLinjer";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(delpinasDataSet1.LejeOrdreLinjerDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual delpinasDataSet1.LejeOrdreLinjerDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            delpinasDataSet1.LejeOrdreLinjerDataTable dataTable = new delpinasDataSet1.LejeOrdreLinjerDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(delpinasDataSet1.LejeOrdreLinjerDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(delpinasDataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "LejeOrdreLinjer");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> startDato, global::System.Nullable<global::System.DateTime> slutDato) {
-            if ((startDato.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(startDato.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((slutDato.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(slutDato.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ResTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public ResTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Res";
-            tableMapping.ColumnMappings.Add("resnr", "resnr");
-            tableMapping.ColumnMappings.Add("pris", "pris");
-            tableMapping.ColumnMappings.Add("navn", "navn");
-            tableMapping.ColumnMappings.Add("tilbehorRes", "tilbehorRes");
+            tableMapping.DataSetTable = "LejeOrdre";
+            tableMapping.ColumnMappings.Add("ordrenr", "ordrenr");
+            tableMapping.ColumnMappings.Add("dato", "dato");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Res] WHERE (([resnr] = @Original_resnr) AND ((@IsNull_pris = 1 AND [pris] IS NULL) OR ([pris] = @Original_pris)) AND ((@IsNull_navn = 1 AND [navn] IS NULL) OR ([navn] = @Original_navn)) AND ((@IsNull_tilbehorRes = 1 AND [tilbehorRes] IS NULL) OR ([tilbehorRes] = @Original_tilbehorRes)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[LejeOrdre] WHERE (([ordrenr] = @Original_ordrenr) AND ((@IsNul" +
+                "l_dato = 1 AND [dato] IS NULL) OR ([dato] = @Original_dato)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_resnr", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resnr", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pris", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pris", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pris", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pris", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_navn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "navn", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_navn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "navn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tilbehorRes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tilbehorRes", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tilbehorRes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tilbehorRes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ordrenr", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ordrenr", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dato", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dato", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dato", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dato", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Res] ([resnr], [pris], [navn], [tilbehorRes]) VALUES (@resnr, " +
-                "@pris, @navn, @tilbehorRes);\r\nSELECT resnr, pris, navn, tilbehorRes FROM Res WHE" +
-                "RE (resnr = @resnr)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[LejeOrdre] ([dato]) VALUES (@dato);\r\nSELECT ordrenr, dato FROM" +
+                " LejeOrdre WHERE (ordrenr = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@resnr", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resnr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pris", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pris", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@navn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "navn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tilbehorRes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tilbehorRes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dato", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dato", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Res] SET [resnr] = @resnr, [pris] = @pris, [navn] = @navn, [tilbehorRes] = @tilbehorRes WHERE (([resnr] = @Original_resnr) AND ((@IsNull_pris = 1 AND [pris] IS NULL) OR ([pris] = @Original_pris)) AND ((@IsNull_navn = 1 AND [navn] IS NULL) OR ([navn] = @Original_navn)) AND ((@IsNull_tilbehorRes = 1 AND [tilbehorRes] IS NULL) OR ([tilbehorRes] = @Original_tilbehorRes)));
-SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[LejeOrdre] SET [dato] = @dato WHERE (([ordrenr] = @Original_ordrenr" +
+                ") AND ((@IsNull_dato = 1 AND [dato] IS NULL) OR ([dato] = @Original_dato)));\r\nSE" +
+                "LECT ordrenr, dato FROM LejeOrdre WHERE (ordrenr = @ordrenr)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@resnr", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resnr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pris", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pris", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@navn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "navn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tilbehorRes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tilbehorRes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_resnr", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resnr", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pris", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pris", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pris", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pris", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_navn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "navn", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_navn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "navn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tilbehorRes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tilbehorRes", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tilbehorRes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tilbehorRes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dato", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dato", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ordrenr", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ordrenr", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dato", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dato", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dato", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dato", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ordrenr", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ordrenr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1566,18 +801,23 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT resnr, pris, navn, tilbehorRes FROM dbo.Res";
+            this._commandCollection[0].CommandText = "SELECT ordrenr, dato FROM dbo.LejeOrdre";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ordrenr, dato FROM dbo.LejeOrdre\r\nWHERE  (cprCvr = @cprCvr)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cprCvr", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "cprCvr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(delpinasDataSet1.ResDataTable dataTable) {
+        public virtual int Fill(delpinasDataSet1.LejeOrdreDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1590,9 +830,9 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual delpinasDataSet1.ResDataTable GetData() {
+        public virtual delpinasDataSet1.LejeOrdreDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            delpinasDataSet1.ResDataTable dataTable = new delpinasDataSet1.ResDataTable();
+            delpinasDataSet1.LejeOrdreDataTable dataTable = new delpinasDataSet1.LejeOrdreDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1600,7 +840,26 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(delpinasDataSet1.ResDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(delpinasDataSet1.LejeOrdreDataTable dataTable, global::System.Nullable<long> cprCvr) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((cprCvr.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(cprCvr.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(delpinasDataSet1.LejeOrdreDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -1608,7 +867,7 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(delpinasDataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Res");
+            return this.Adapter.Update(dataSet, "LejeOrdre");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1630,31 +889,15 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_resnr, global::System.Nullable<int> Original_pris, string Original_navn, global::System.Nullable<int> Original_tilbehorRes) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_resnr));
-            if ((Original_pris.HasValue == true)) {
+        public virtual int Delete(int Original_ordrenr, global::System.Nullable<global::System.DateTime> Original_dato) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ordrenr));
+            if ((Original_dato.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_pris.Value));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_dato.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_navn == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_navn));
-            }
-            if ((Original_tilbehorRes.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_tilbehorRes.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1676,25 +919,12 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int resnr, global::System.Nullable<int> pris, string navn, global::System.Nullable<int> tilbehorRes) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(resnr));
-            if ((pris.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(pris.Value));
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> dato) {
+            if ((dato.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(dato.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((navn == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(navn));
-            }
-            if ((tilbehorRes.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(tilbehorRes.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1716,51 +946,23 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int resnr, global::System.Nullable<int> pris, string navn, global::System.Nullable<int> tilbehorRes, int Original_resnr, global::System.Nullable<int> Original_pris, string Original_navn, global::System.Nullable<int> Original_tilbehorRes) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(resnr));
-            if ((pris.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(pris.Value));
+        public virtual int Update(global::System.Nullable<global::System.DateTime> dato, int Original_ordrenr, global::System.Nullable<global::System.DateTime> Original_dato, int ordrenr) {
+            if ((dato.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(dato.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((navn == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(navn));
-            }
-            if ((tilbehorRes.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(tilbehorRes.Value));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_ordrenr));
+            if ((Original_dato.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Original_dato.Value));
             }
             else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_resnr));
-            if ((Original_pris.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_pris.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_navn == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_navn));
-            }
-            if ((Original_tilbehorRes.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_tilbehorRes.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ordrenr));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1781,8 +983,8 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> pris, string navn, global::System.Nullable<int> tilbehorRes, int Original_resnr, global::System.Nullable<int> Original_pris, string Original_navn, global::System.Nullable<int> Original_tilbehorRes) {
-            return this.Update(Original_resnr, pris, navn, tilbehorRes, Original_resnr, Original_pris, Original_navn, Original_tilbehorRes);
+        public virtual int Update(global::System.Nullable<global::System.DateTime> dato, int Original_ordrenr, global::System.Nullable<global::System.DateTime> Original_dato) {
+            return this.Update(dato, Original_ordrenr, Original_dato, Original_ordrenr);
         }
     }
     
@@ -1798,9 +1000,7 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         
         private UpdateOrderOption _updateOrder;
         
-        private LejeOrdreLinjerTableAdapter _lejeOrdreLinjerTableAdapter;
-        
-        private ResTableAdapter _resTableAdapter;
+        private LejeOrdreTableAdapter _lejeOrdreTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1822,26 +1022,12 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public LejeOrdreLinjerTableAdapter LejeOrdreLinjerTableAdapter {
+        public LejeOrdreTableAdapter LejeOrdreTableAdapter {
             get {
-                return this._lejeOrdreLinjerTableAdapter;
+                return this._lejeOrdreTableAdapter;
             }
             set {
-                this._lejeOrdreLinjerTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public ResTableAdapter ResTableAdapter {
-            get {
-                return this._resTableAdapter;
-            }
-            set {
-                this._resTableAdapter = value;
+                this._lejeOrdreTableAdapter = value;
             }
         }
         
@@ -1864,13 +1050,9 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._lejeOrdreLinjerTableAdapter != null) 
-                            && (this._lejeOrdreLinjerTableAdapter.Connection != null))) {
-                    return this._lejeOrdreLinjerTableAdapter.Connection;
-                }
-                if (((this._resTableAdapter != null) 
-                            && (this._resTableAdapter.Connection != null))) {
-                    return this._resTableAdapter.Connection;
+                if (((this._lejeOrdreTableAdapter != null) 
+                            && (this._lejeOrdreTableAdapter.Connection != null))) {
+                    return this._lejeOrdreTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1885,10 +1067,7 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._lejeOrdreLinjerTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._resTableAdapter != null)) {
+                if ((this._lejeOrdreTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1902,22 +1081,12 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(delpinasDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._lejeOrdreLinjerTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.LejeOrdreLinjer.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._lejeOrdreTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.LejeOrdre.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._lejeOrdreLinjerTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._resTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Res.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    this.SortSelfReferenceRows(updatedRows, dataSet.Relations["FK__Res__tilbehorRes__66603565"], false);
-                    result = (result + this._resTableAdapter.Update(updatedRows));
+                    result = (result + this._lejeOrdreTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1931,20 +1100,11 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(delpinasDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._lejeOrdreLinjerTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.LejeOrdreLinjer.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._lejeOrdreTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.LejeOrdre.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._lejeOrdreLinjerTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._resTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Res.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    this.SortSelfReferenceRows(addedRows, dataSet.Relations["FK__Res__tilbehorRes__66603565"], false);
-                    result = (result + this._resTableAdapter.Update(addedRows));
+                    result = (result + this._lejeOrdreTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1958,20 +1118,11 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(delpinasDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._resTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Res.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._lejeOrdreTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.LejeOrdre.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    this.SortSelfReferenceRows(deletedRows, dataSet.Relations["FK__Res__tilbehorRes__66603565"], true);
-                    result = (result + this._resTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._lejeOrdreLinjerTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.LejeOrdreLinjer.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._lejeOrdreLinjerTableAdapter.Update(deletedRows));
+                    result = (result + this._lejeOrdreTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -2014,13 +1165,8 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._lejeOrdreLinjerTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._lejeOrdreLinjerTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
-            if (((this._resTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._resTableAdapter.Connection) == false))) {
+            if (((this._lejeOrdreTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._lejeOrdreTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -2056,22 +1202,13 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._lejeOrdreLinjerTableAdapter != null)) {
-                    revertConnections.Add(this._lejeOrdreLinjerTableAdapter, this._lejeOrdreLinjerTableAdapter.Connection);
-                    this._lejeOrdreLinjerTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._lejeOrdreLinjerTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._lejeOrdreLinjerTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._lejeOrdreLinjerTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._lejeOrdreLinjerTableAdapter.Adapter);
-                    }
-                }
-                if ((this._resTableAdapter != null)) {
-                    revertConnections.Add(this._resTableAdapter, this._resTableAdapter.Connection);
-                    this._resTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._resTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._resTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._resTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._resTableAdapter.Adapter);
+                if ((this._lejeOrdreTableAdapter != null)) {
+                    revertConnections.Add(this._lejeOrdreTableAdapter, this._lejeOrdreTableAdapter.Connection);
+                    this._lejeOrdreTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._lejeOrdreTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._lejeOrdreTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._lejeOrdreTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._lejeOrdreTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -2132,13 +1269,9 @@ SELECT resnr, pris, navn, tilbehorRes FROM Res WHERE (resnr = @resnr)";
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._lejeOrdreLinjerTableAdapter != null)) {
-                    this._lejeOrdreLinjerTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._lejeOrdreLinjerTableAdapter]));
-                    this._lejeOrdreLinjerTableAdapter.Transaction = null;
-                }
-                if ((this._resTableAdapter != null)) {
-                    this._resTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._resTableAdapter]));
-                    this._resTableAdapter.Transaction = null;
+                if ((this._lejeOrdreTableAdapter != null)) {
+                    this._lejeOrdreTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._lejeOrdreTableAdapter]));
+                    this._lejeOrdreTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

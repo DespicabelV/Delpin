@@ -18,6 +18,7 @@ namespace Delpin
             return "Data Source=den1.mssql7.gear.host; Initial Catalog=delpinas; User Id=delpinas; Password=Lu3wumM-!cTu";
         }
 
+        
 
         public void Opret_Ordre_Sog(long ID, out string navn, out string gade, out int postnr, out string byen)
         {
@@ -104,7 +105,7 @@ namespace Delpin
                 Opret_Ordre_Dato.ExecuteNonQuery();
             }
             catch (SqlException ex)
-            {
+            {    
 
                 Console.WriteLine("Der er sket en fejl i din SQL");
                 //Udskriver fejltypen:
@@ -116,13 +117,13 @@ namespace Delpin
             }
         }
 
-        public void Sog_Ordre_Sog(int ID, out int resnr, out string navn, out double pris, out string start, out string slut)
+        public List<LejeList> Sog_Ordre_Sog(int ID)
         {
-            resnr = 0;
-            navn = "";
-            pris = 0;
-            start = "";
-            slut = "";
+            string navn, start, slut;
+            int resnr;
+            double pris;
+            List<LejeList> list = new List<LejeList>();
+
             try
             {
                 conn = new SqlConnection(Connection());
@@ -132,6 +133,7 @@ namespace Delpin
                 Opret_Ordre_Sog.Connection = conn;
                 reader = Opret_Ordre_Sog.ExecuteReader();
 
+
                 while (reader.Read())
                 {
                     resnr = Convert.ToInt32(reader["resnr"]);
@@ -139,6 +141,8 @@ namespace Delpin
                     pris  = Convert.ToInt32(reader["pris"]);
                     start = reader["startDato"].ToString();
                     slut  = reader["slutDato"].ToString();
+                    LejeList l = new LejeList(resnr, navn, pris, start, slut);
+                    list.Add(l);
                 }
             }
             catch (SqlException ex)
@@ -152,22 +156,7 @@ namespace Delpin
             {
                 conn.Close();
             }
-        }
-
-        class LejsList
-        {
-            private int resnr;
-            private string navn, start, slut;
-            private double pris;
-
-            public LejsList(int resnr, string navn, double pris, string start, string slut)
-            {
-                this.resnr = resnr;
-                this.navn = navn;
-                this.pris = pris;
-                this.start = start;
-                this.slut = slut;
-            }
+            return list;
         }
     }
 
