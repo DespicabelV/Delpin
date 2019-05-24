@@ -50,21 +50,15 @@
     <Compile Include="Database_Manager.cs" />
     <Compile Include="DEB.cs" />
 <<<<<<< HEAD
-<<<<<<< HEAD
     <Compile Include="delpinasDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>delpinasDataSet1.xsd</DependentUpon>
 =======
-=======
->>>>>>> parent of 66ac578... Spg_RES Virker
     <Compile Include="delpinasDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>delpinasDataSet.xsd</DependentUpon>
-<<<<<<< HEAD
->>>>>>> parent of 66ac578... Spg_RES Virker
-=======
 >>>>>>> parent of 66ac578... Spg_RES Virker
     </Compile>
     <Compile Include="Hovedmenu.cs">
@@ -146,7 +140,6 @@
       <DependentUpon>Sog_RES.cs</DependentUpon>
     </EmbeddedResource>
 <<<<<<< HEAD
-<<<<<<< HEAD
     <None Include="delpinasDataSet1.xsc">
       <DependentUpon>delpinasDataSet1.xsd</DependentUpon>
     </None>
@@ -158,8 +151,6 @@
     <None Include="delpinasDataSet1.xss">
       <DependentUpon>delpinasDataSet1.xsd</DependentUpon>
 =======
-=======
->>>>>>> parent of 66ac578... Spg_RES Virker
     <None Include="delpinasDataSet.xsc">
       <DependentUpon>delpinasDataSet.xsd</DependentUpon>
     </None>
@@ -170,9 +161,6 @@
     </None>
     <None Include="delpinasDataSet.xss">
       <DependentUpon>delpinasDataSet.xsd</DependentUpon>
-<<<<<<< HEAD
->>>>>>> parent of 66ac578... Spg_RES Virker
-=======
 >>>>>>> parent of 66ac578... Spg_RES Virker
     </None>
     <None Include="Properties\Settings.settings">
