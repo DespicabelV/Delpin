@@ -12,30 +12,29 @@ namespace Delpin
 {
     public partial class Sog_Ordre : Form
     {
-        Temp_Viggo test = new Temp_Viggo();
         public Sog_Ordre()
         {
             InitializeComponent();
         }
-        
-        private void buttonSog_Click(object sender, EventArgs e)
+
+        private void Sog_Ordre_Load(object sender, EventArgs e)
         {
-            string resnavn, startDato, slutDato;
-            int resnr;
-            double pris;
-            List<LejeList> list = new List<LejeList>();
-            // opret et objekt der hedder lejeordre og smid data i den så den kan loppes her og skrives i datagridview
-            list = test.Sog_Ordre_Sog(Convert.ToInt32(textBoxOrdreNr.Text));
+            // TODO: This line of code loads data into the 'delpinasDataSet2.LejeOrdreLinjer' table. You can move, or remove it, as needed.
+            this.lejeOrdreLinjerTableAdapter.Fill(this.delpinasDataSet2.LejeOrdreLinjer);
 
-            foreach (Lejelist l in list)
+        }
+
+        private void søgToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
             {
-
+                this.lejeOrdreLinjerTableAdapter.Søg(this.delpinasDataSet2.LejeOrdreLinjer, new System.Nullable<int>(((int)(System.Convert.ChangeType(ordreNummerToolStripTextBox.Text, typeof(int))))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
-            for (int i = 0; i < list.Count; i++)
-            {
-                
-            }
         }
     }
 }

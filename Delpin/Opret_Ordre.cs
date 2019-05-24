@@ -24,6 +24,8 @@ namespace Delpin
             label6.Visible = false;
             label4.Visible = false;
             label7.Visible = false;
+
+
         }
 
         private void buttonSog_Click(object sender, EventArgs e)
@@ -83,6 +85,10 @@ namespace Delpin
 
         private void buttonSletVare_Click(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+            {
+                dataGridView1.Rows.RemoveAt(item.Index);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -94,13 +100,22 @@ namespace Delpin
         {
             double maxI = 0;
             double maxE = 0;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            double days;
+
+            for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
+            {
+                days = (Convert.ToDateTime(dataGridView1.Rows[i].Cells["Slut"].Value) - Convert.ToDateTime(dataGridView1.Rows[i].Cells["Start"].Value)).TotalDays;
+                //days = (Convert.ToDateTime("2019-05-25") - Convert.ToDateTime("2019-05-23")).TotalDays;
+                dataGridView1.Rows[i].Cells["Pris"].Value = (days * Convert.ToDouble(dataGridView1.Rows[i].Cells["Pris_Pr_Dag"].Value));
+            }
+
+            for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
             {
                 maxE = maxE + Convert.ToDouble(dataGridView1.Rows[i].Cells["Pris"].Value);
             }
             textBoxEkslMoms.Text = Convert.ToString(maxE);
 
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
             {
                 maxI = maxI + Convert.ToDouble(dataGridView1.Rows[i].Cells["Pris"].Value);
             }
@@ -115,10 +130,18 @@ namespace Delpin
             long cprcvr;
 
             dato = DateTime.Now.ToString("yyyy-MM-dd");
-            gade = textBoxGade.Text;
-            byen = textBoxBy.Text;
             cprcvr = Convert.ToInt32(textBoxCVRCPR.Text);
-            postnr = Convert.ToInt32(textBoxPostnr.Text);
+
+            if (checkBoxNej.Checked == true)
+            {
+                test.Opret_Ordre_Afdeling(comboBoxAfdeling.Text, out byen, out postnr, out gade);
+            }
+            else
+            {
+                gade = textBoxGade.Text;
+                byen = textBoxBy.Text;
+                postnr = Convert.ToInt32(textBoxPostnr.Text);
+            }
 
             if (checkBoxJa.Checked == true)
             {
@@ -145,6 +168,13 @@ namespace Delpin
             test.Opret_Ordre_LejeOrdreLinjer(ordrenr, resnr,resnavn, startdato, slutdato, pris);
             }
             MessageBox.Show("Ordre oprettet");
+        }
+
+        private void Opret_Ordre_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'delpinasDataSet3.Afdelinger' table. You can move, or remove it, as needed.
+            this.afdelingerTableAdapter.Fill(this.delpinasDataSet3.Afdelinger);
+
         }
     }
 }
