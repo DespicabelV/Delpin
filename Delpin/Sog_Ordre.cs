@@ -17,25 +17,14 @@ namespace Delpin
         {
             InitializeComponent();
         }
-        
+
         private void buttonSog_Click(object sender, EventArgs e)
         {
             string resnavn, startDato, slutDato;
             int resnr;
             double pris;
-            List<LejeList> list = new List<LejeList>();
             // opret et objekt der hedder lejeordre og smid data i den så den kan loppes her og skrives i datagridview
-            list = test.Sog_Ordre_Sog(Convert.ToInt32(textBoxOrdreNr.Text));
-
-            foreach (Lejelist l in list)
-            {
-
-            }
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                
-            }
+            test.Sog_Ordre_Sog(Convert.ToInt32(textBoxOrdreNr.Text), out resnr, out resnavn, out pris, out startDato, out slutDato);
         }
     }
 }

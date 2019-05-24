@@ -203,7 +203,6 @@
             this.buttonKredit.TabIndex = 16;
             this.buttonKredit.Text = "Søg Kredit";
             this.buttonKredit.UseVisualStyleBackColor = true;
-            this.buttonKredit.Click += new System.EventHandler(this.buttonKredit_Click);
             // 
             // buttonPrivat
             // 
