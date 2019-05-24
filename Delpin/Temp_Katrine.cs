@@ -10,40 +10,6 @@ namespace Delpin
 {
     public class Temp_Katrine
     {
-
-        public string SkrivOpret(string filnavn, string start, string slut)
-        {
-            DataBM dbm = new DataBM();
-
-            Console.WriteLine("Skriv navnet på filen som du vil oprette: ");
-            string fil = Console.ReadLine();
-            filnavn = $"{filnavn}.txt";
-            StreamWriter outputStream = null;
-            try
-            {
-                outputStream = new StreamWriter(filnavn);
-                List<string> linje = new List<string>();
-             
-                linje = dbm.HentLejeListe(start, slut);
-                for (int i = 0; i < linje.Count; i++)
-                {
-                    
-                    outputStream.WriteLine(linje[i]);
-
-                }
-            }
-            catch (FileNotFoundException)
-            {
-                Console.WriteLine("Fejl: Text-filen findes ikke.");
-            }
-            finally
-            {
-                if (outputStream != null)
-                    outputStream.Close();
-            }
-            return fil;
-        }
-
     }
 
     class DataBM

@@ -112,7 +112,7 @@ namespace Delpin
             com.ExecuteNonQuery();
             conn.Close();
         }
-
+ 
         public void UpdateDEB(DEB deb)
         {
             string UpdateSqlString = $"Update DEB set cprCvr = '{deb.CprCvr}', " +
@@ -125,5 +125,43 @@ namespace Delpin
             com.ExecuteNonQuery();
             conn.Close();
         }
+
+        public List<string> HentLejeListe(string start, string slut)
+        {
+            List<string> linje = new List<string>();
+            string slutdato, startdato, resnr, gade, postnummer, by, nyLinje, levering;
+
+            string SelectSqlString = $"select LOL.resnr, LOL.startDato, LOL.slutDato, LO.gade, LO.postnr, LO.levering, LO.byen from LejeOrdreLinjer LOL " +
+                $"join LejeOrdre LO on LOL.ordrenr = LOL.ordrenr " +
+                $"where startDato >= '{start}' AND slutDato <= '{slut}' " +
+                $"Order by startDato";
+            SqlConnection conn = new SqlConnection(Connection());
+            conn.Open();
+            SqlCommand comselect = new SqlCommand(SelectSqlString, conn);
+
+            SqlDataReader myReader = comselect.ExecuteReader();
+            while (myReader.Read())
+            {
+                //Startdato og slutdato laves til yyyy-MM-dd, for ellers tager den klokkeslæt med.
+                startdato = Convert.ToDateTime(myReader["startDato"]).ToString("yyyy-MM-dd");
+                slutdato = Convert.ToDateTime(myReader["slutDato"]).ToString("yyyy-MM-dd");
+                resnr = myReader["resnr"].ToString();
+                gade = myReader["gade"].ToString();
+                postnummer = myReader["postnr"].ToString();
+                by = myReader["byen"].ToString();
+                levering = myReader["levering"].ToString();
+
+                nyLinje = "Startdato: " + startdato + "\t Slutdato: " + slutdato + "\t Levering: " + levering + "\t Resnr: " + resnr + "\t Gade: " + gade + "\t Postnummer: " + postnummer + "\t By: " + by;
+                //Tilføjer en string/linje til listen med alle informationerne. 
+                linje.Add(nyLinje);
+            }
+
+            myReader.Close();
+
+            conn.Close();
+            return linje;
+
+        }
+
     }
 }
