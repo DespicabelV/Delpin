@@ -51,6 +51,7 @@
     <Compile Include="DEB.cs" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="delpinasDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -58,11 +59,16 @@
 =======
 =======
 >>>>>>> parent of 66ac578... Spg_RES Virker
+=======
+>>>>>>> parent of 66ac578... Spg_RES Virker
     <Compile Include="delpinasDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>delpinasDataSet.xsd</DependentUpon>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 66ac578... Spg_RES Virker
+=======
 >>>>>>> parent of 66ac578... Spg_RES Virker
 =======
 >>>>>>> parent of 66ac578... Spg_RES Virker
@@ -147,6 +153,7 @@
     </EmbeddedResource>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <None Include="delpinasDataSet1.xsc">
       <DependentUpon>delpinasDataSet1.xsd</DependentUpon>
     </None>
@@ -160,6 +167,8 @@
 =======
 =======
 >>>>>>> parent of 66ac578... Spg_RES Virker
+=======
+>>>>>>> parent of 66ac578... Spg_RES Virker
     <None Include="delpinasDataSet.xsc">
       <DependentUpon>delpinasDataSet.xsd</DependentUpon>
     </None>
@@ -171,6 +180,9 @@
     <None Include="delpinasDataSet.xss">
       <DependentUpon>delpinasDataSet.xsd</DependentUpon>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 66ac578... Spg_RES Virker
+=======
 >>>>>>> parent of 66ac578... Spg_RES Virker
 =======
 >>>>>>> parent of 66ac578... Spg_RES Virker
