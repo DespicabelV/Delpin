@@ -61,11 +61,8 @@
             this.buttonSog = new System.Windows.Forms.Button();
             this.buttonOpretKunde = new System.Windows.Forms.Button();
             this.ButtonUpdate = new System.Windows.Forms.Button();
-            this.delpinasDataSet3 = new Delpin.delpinasDataSet3();
             this.afdelingerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.afdelingerTableAdapter = new Delpin.delpinasDataSet3TableAdapters.AfdelingerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.afdelingerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -365,20 +362,12 @@
             this.ButtonUpdate.Text = "Update";
             this.ButtonUpdate.UseVisualStyleBackColor = true;
             this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
-            // 
-            // delpinasDataSet3
-            // 
-            this.delpinasDataSet3.DataSetName = "delpinasDataSet3";
-            this.delpinasDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // afdelingerBindingSource
             // 
             this.afdelingerBindingSource.DataMember = "Afdelinger";
-            this.afdelingerBindingSource.DataSource = this.delpinasDataSet3;
             // 
             // afdelingerTableAdapter
             // 
-            this.afdelingerTableAdapter.ClearBeforeFill = true;
             // 
             // Opret_Ordre
             // 
@@ -414,9 +403,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Opret_Ordre";
             this.Text = "Opret_Ordre";
-            this.Load += new System.EventHandler(this.Opret_Ordre_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.afdelingerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -457,8 +444,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Start;
         private System.Windows.Forms.DataGridViewTextBoxColumn Slut;
         private System.Windows.Forms.Button ButtonUpdate;
-        private delpinasDataSet3 delpinasDataSet3;
         private System.Windows.Forms.BindingSource afdelingerBindingSource;
-        private delpinasDataSet3TableAdapters.AfdelingerTableAdapter afdelingerTableAdapter;
     }
 }

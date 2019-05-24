@@ -40,15 +40,6 @@ namespace Delpin
             MessageBox.Show("DEB opdateret");
         }
 
-        private void Sog_DEB_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'delpinasDataSet.LejeOrdre' table. You can move, or remove it, as needed.
-            this.lejeOrdreTableAdapter.Fill(this.delpinasDataSet.LejeOrdre);
-
-        }
-
-     
-
         private void textBoxNavn_TextChanged(object sender, EventArgs e)
         {
 
@@ -65,16 +56,6 @@ namespace Delpin
             textBoxTlf.Text = deb.Tlf.ToString();
             textBoxEmail.Text = deb.Email;
             textBoxAnsvarlig.Text = deb.Ansvarlig;
-
-            try
-            {
-                this.lejeOrdreTableAdapter.FillBy1(this.delpinasDataSet.LejeOrdre, new System.Nullable<long>(((long)(System.Convert.ChangeType(cprCvrToolStripTextBox.Text, typeof(long))))));
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
         }
 
         private void fillBy1ToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

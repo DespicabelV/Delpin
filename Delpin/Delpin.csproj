@@ -49,26 +49,6 @@
     <Compile Include="Controller.cs" />
     <Compile Include="Database_Manager.cs" />
     <Compile Include="DEB.cs" />
-    <Compile Include="delpinasDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>delpinasDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="delpinasDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>delpinasDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="delpinasDataSet21.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>delpinasDataSet21.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="delpinasDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>delpinasDataSet3.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Hovedmenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,50 +126,6 @@
     <EmbeddedResource Include="Sog_RES.resx">
       <DependentUpon>Sog_RES.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="delpinasDataSet.xsc">
-      <DependentUpon>delpinasDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="delpinasDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>delpinasDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="delpinasDataSet.xss">
-      <DependentUpon>delpinasDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="delpinasDataSet1.xsc">
-      <DependentUpon>delpinasDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="delpinasDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>delpinasDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="delpinasDataSet1.xss">
-      <DependentUpon>delpinasDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="delpinasDataSet21.xsc">
-      <DependentUpon>delpinasDataSet21.xsd</DependentUpon>
-    </None>
-    <None Include="delpinasDataSet21.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>delpinasDataSet21.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="delpinasDataSet21.xss">
-      <DependentUpon>delpinasDataSet21.xsd</DependentUpon>
-    </None>
-    <None Include="delpinasDataSet3.xsc">
-      <DependentUpon>delpinasDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="delpinasDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>delpinasDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="delpinasDataSet3.xss">
-      <DependentUpon>delpinasDataSet3.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

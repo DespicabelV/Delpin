@@ -37,8 +37,6 @@
             this.ordreNummerToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.søgToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.lejeOrdreLinjerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.delpinasDataSet2 = new Delpin.delpinasDataSet2();
-            this.lejeOrdreLinjerTableAdapter = new Delpin.delpinasDataSet2TableAdapters.LejeOrdreLinjerTableAdapter();
             this.resnrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resnavnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +45,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.søgToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreLinjerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -118,21 +115,10 @@
             this.søgToolStripButton.Name = "søgToolStripButton";
             this.søgToolStripButton.Size = new System.Drawing.Size(39, 24);
             this.søgToolStripButton.Text = "Søg";
-            this.søgToolStripButton.Click += new System.EventHandler(this.søgToolStripButton_Click);
             // 
             // lejeOrdreLinjerBindingSource
             // 
             this.lejeOrdreLinjerBindingSource.DataMember = "LejeOrdreLinjer";
-            this.lejeOrdreLinjerBindingSource.DataSource = this.delpinasDataSet2;
-            // 
-            // delpinasDataSet2
-            // 
-            this.delpinasDataSet2.DataSetName = "delpinasDataSet2";
-            this.delpinasDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lejeOrdreLinjerTableAdapter
-            // 
-            this.lejeOrdreLinjerTableAdapter.ClearBeforeFill = true;
             // 
             // resnrDataGridViewTextBoxColumn
             // 
@@ -176,12 +162,10 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Sog_Ordre";
             this.Text = "Sog_Ordre";
-            this.Load += new System.EventHandler(this.Sog_Ordre_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.søgToolStrip.ResumeLayout(false);
             this.søgToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreLinjerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,9 +175,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonKvitering;
         private System.Windows.Forms.Button buttonFaktura;
-        private delpinasDataSet2 delpinasDataSet2;
         private System.Windows.Forms.BindingSource lejeOrdreLinjerBindingSource;
-        private delpinasDataSet2TableAdapters.LejeOrdreLinjerTableAdapter lejeOrdreLinjerTableAdapter;
         private System.Windows.Forms.ToolStrip søgToolStrip;
         private System.Windows.Forms.ToolStripLabel ordreNummerToolStripLabel;
         private System.Windows.Forms.ToolStripTextBox ordreNummerToolStripTextBox;
