@@ -44,6 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxAfdeling = new System.Windows.Forms.ComboBox();
+            this.afdelingerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Navn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Res_Nr = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,9 +62,13 @@
             this.buttonSog = new System.Windows.Forms.Button();
             this.buttonOpretKunde = new System.Windows.Forms.Button();
             this.ButtonUpdate = new System.Windows.Forms.Button();
-            this.afdelingerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.delpinasDataSet_Opret_Ordre_Afdeling = new Delpin.delpinasDataSet_Opret_Ordre_Afdeling();
+            this.afdelingerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.afdelingerTableAdapter = new Delpin.delpinasDataSet_Opret_Ordre_AfdelingTableAdapters.AfdelingerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.afdelingerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSet_Opret_Ordre_Afdeling)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.afdelingerBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,7 +84,7 @@
             // textBoxCVRCPR
             // 
             this.textBoxCVRCPR.Location = new System.Drawing.Point(100, 12);
-            this.textBoxCVRCPR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCVRCPR.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCVRCPR.Name = "textBoxCVRCPR";
             this.textBoxCVRCPR.Size = new System.Drawing.Size(251, 22);
             this.textBoxCVRCPR.TabIndex = 1;
@@ -87,7 +92,7 @@
             // textBoxNavn
             // 
             this.textBoxNavn.Location = new System.Drawing.Point(100, 44);
-            this.textBoxNavn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNavn.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNavn.Name = "textBoxNavn";
             this.textBoxNavn.Size = new System.Drawing.Size(251, 22);
             this.textBoxNavn.TabIndex = 3;
@@ -116,7 +121,7 @@
             // 
             this.checkBoxJa.AutoSize = true;
             this.checkBoxJa.Location = new System.Drawing.Point(100, 79);
-            this.checkBoxJa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxJa.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxJa.Name = "checkBoxJa";
             this.checkBoxJa.Size = new System.Drawing.Size(45, 21);
             this.checkBoxJa.TabIndex = 5;
@@ -128,7 +133,7 @@
             // 
             this.checkBoxNej.AutoSize = true;
             this.checkBoxNej.Location = new System.Drawing.Point(157, 79);
-            this.checkBoxNej.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxNej.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxNej.Name = "checkBoxNej";
             this.checkBoxNej.Size = new System.Drawing.Size(51, 21);
             this.checkBoxNej.TabIndex = 6;
@@ -139,7 +144,7 @@
             // textBoxGade
             // 
             this.textBoxGade.Location = new System.Drawing.Point(100, 108);
-            this.textBoxGade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxGade.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxGade.Name = "textBoxGade";
             this.textBoxGade.Size = new System.Drawing.Size(416, 22);
             this.textBoxGade.TabIndex = 8;
@@ -157,7 +162,7 @@
             // textBoxPostnr
             // 
             this.textBoxPostnr.Location = new System.Drawing.Point(100, 140);
-            this.textBoxPostnr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPostnr.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPostnr.Name = "textBoxPostnr";
             this.textBoxPostnr.Size = new System.Drawing.Size(123, 22);
             this.textBoxPostnr.TabIndex = 10;
@@ -175,7 +180,7 @@
             // textBoxBy
             // 
             this.textBoxBy.Location = new System.Drawing.Point(265, 140);
-            this.textBoxBy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxBy.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxBy.Name = "textBoxBy";
             this.textBoxBy.Size = new System.Drawing.Size(251, 22);
             this.textBoxBy.TabIndex = 12;
@@ -202,15 +207,19 @@
             // 
             // comboBoxAfdeling
             // 
-            this.comboBoxAfdeling.DataSource = this.afdelingerBindingSource;
+            this.comboBoxAfdeling.DataSource = this.afdelingerBindingSource1;
             this.comboBoxAfdeling.DisplayMember = "bynavn";
             this.comboBoxAfdeling.FormattingEnabled = true;
             this.comboBoxAfdeling.Location = new System.Drawing.Point(100, 108);
-            this.comboBoxAfdeling.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAfdeling.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAfdeling.Name = "comboBoxAfdeling";
             this.comboBoxAfdeling.Size = new System.Drawing.Size(251, 24);
             this.comboBoxAfdeling.TabIndex = 14;
             this.comboBoxAfdeling.ValueMember = "bynavn";
+            // 
+            // afdelingerBindingSource
+            // 
+            this.afdelingerBindingSource.DataMember = "Afdelinger";
             // 
             // dataGridView1
             // 
@@ -223,7 +232,7 @@
             this.Start,
             this.Slut});
             this.dataGridView1.Location = new System.Drawing.Point(72, 204);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(853, 315);
             this.dataGridView1.TabIndex = 15;
@@ -262,7 +271,7 @@
             // buttonTilfojVare
             // 
             this.buttonTilfojVare.Location = new System.Drawing.Point(72, 167);
-            this.buttonTilfojVare.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTilfojVare.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTilfojVare.Name = "buttonTilfojVare";
             this.buttonTilfojVare.Size = new System.Drawing.Size(100, 28);
             this.buttonTilfojVare.TabIndex = 16;
@@ -273,7 +282,7 @@
             // buttonSletVare
             // 
             this.buttonSletVare.Location = new System.Drawing.Point(825, 167);
-            this.buttonSletVare.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSletVare.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSletVare.Name = "buttonSletVare";
             this.buttonSletVare.Size = new System.Drawing.Size(100, 28);
             this.buttonSletVare.TabIndex = 17;
@@ -304,7 +313,7 @@
             // textBoxEkslMoms
             // 
             this.textBoxEkslMoms.Location = new System.Drawing.Point(516, 559);
-            this.textBoxEkslMoms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEkslMoms.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEkslMoms.Name = "textBoxEkslMoms";
             this.textBoxEkslMoms.ReadOnly = true;
             this.textBoxEkslMoms.Size = new System.Drawing.Size(132, 22);
@@ -313,7 +322,7 @@
             // textBoxInkMoms
             // 
             this.textBoxInkMoms.Location = new System.Drawing.Point(661, 559);
-            this.textBoxInkMoms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxInkMoms.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxInkMoms.Name = "textBoxInkMoms";
             this.textBoxInkMoms.ReadOnly = true;
             this.textBoxInkMoms.Size = new System.Drawing.Size(132, 22);
@@ -322,7 +331,7 @@
             // buttonOpretOrdre
             // 
             this.buttonOpretOrdre.Location = new System.Drawing.Point(803, 539);
-            this.buttonOpretOrdre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOpretOrdre.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOpretOrdre.Name = "buttonOpretOrdre";
             this.buttonOpretOrdre.Size = new System.Drawing.Size(123, 44);
             this.buttonOpretOrdre.TabIndex = 22;
@@ -355,19 +364,27 @@
             // ButtonUpdate
             // 
             this.ButtonUpdate.Location = new System.Drawing.Point(385, 539);
-            this.ButtonUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonUpdate.Name = "ButtonUpdate";
             this.ButtonUpdate.Size = new System.Drawing.Size(123, 44);
             this.ButtonUpdate.TabIndex = 25;
             this.ButtonUpdate.Text = "Update";
             this.ButtonUpdate.UseVisualStyleBackColor = true;
             this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
-            // afdelingerBindingSource
             // 
-            this.afdelingerBindingSource.DataMember = "Afdelinger";
+            // delpinasDataSet_Opret_Ordre_Afdeling
+            // 
+            this.delpinasDataSet_Opret_Ordre_Afdeling.DataSetName = "delpinasDataSet_Opret_Ordre_Afdeling";
+            this.delpinasDataSet_Opret_Ordre_Afdeling.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // afdelingerBindingSource1
+            // 
+            this.afdelingerBindingSource1.DataMember = "Afdelinger";
+            this.afdelingerBindingSource1.DataSource = this.delpinasDataSet_Opret_Ordre_Afdeling;
             // 
             // afdelingerTableAdapter
             // 
+            this.afdelingerTableAdapter.ClearBeforeFill = true;
             // 
             // Opret_Ordre
             // 
@@ -400,11 +417,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxCVRCPR);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Opret_Ordre";
             this.Text = "Opret_Ordre";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Opret_Ordre_Load);
             ((System.ComponentModel.ISupportInitialize)(this.afdelingerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSet_Opret_Ordre_Afdeling)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.afdelingerBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,5 +465,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Slut;
         private System.Windows.Forms.Button ButtonUpdate;
         private System.Windows.Forms.BindingSource afdelingerBindingSource;
+        private delpinasDataSet_Opret_Ordre_Afdeling delpinasDataSet_Opret_Ordre_Afdeling;
+        private System.Windows.Forms.BindingSource afdelingerBindingSource1;
+        private delpinasDataSet_Opret_Ordre_AfdelingTableAdapters.AfdelingerTableAdapter afdelingerTableAdapter;
     }
 }

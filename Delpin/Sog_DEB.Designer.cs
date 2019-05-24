@@ -47,17 +47,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonOpdater = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ordrenrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lejeOrdreBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.cprCvrToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.cprCvrToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.søgToolStrip = new System.Windows.Forms.ToolStrip();
+            this.cprCvrToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.cprCvrToolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.søgToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lejeOrdreBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.delpinasDataSetSog_DEB = new Delpin.delpinasDataSetSog_DEB();
+            this.lejeOrdreTableAdapter = new Delpin.delpinasDataSetSog_DEBTableAdapters.LejeOrdreTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource)).BeginInit();
-            this.fillBy1ToolStrip.SuspendLayout();
+            this.søgToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSetSog_DEB)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSlet
@@ -224,80 +228,85 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ordrenrDataGridViewTextBoxColumn,
-            this.datoDataGridViewTextBoxColumn,
-            this.prisDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.lejeOrdreBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.dataGridView1.DataSource = this.lejeOrdreBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(20, 231);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(633, 308);
             this.dataGridView1.TabIndex = 39;
             // 
-            // ordrenrDataGridViewTextBoxColumn
-            // 
-            this.ordrenrDataGridViewTextBoxColumn.DataPropertyName = "ordrenr";
-            this.ordrenrDataGridViewTextBoxColumn.HeaderText = "Ordre Nr";
-            this.ordrenrDataGridViewTextBoxColumn.Name = "ordrenrDataGridViewTextBoxColumn";
-            this.ordrenrDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // datoDataGridViewTextBoxColumn
-            // 
-            this.datoDataGridViewTextBoxColumn.DataPropertyName = "dato";
-            this.datoDataGridViewTextBoxColumn.HeaderText = "Dato";
-            this.datoDataGridViewTextBoxColumn.Name = "datoDataGridViewTextBoxColumn";
-            // 
-            // prisDataGridViewTextBoxColumn
-            // 
-            this.prisDataGridViewTextBoxColumn.DataPropertyName = "pris";
-            this.prisDataGridViewTextBoxColumn.HeaderText = "Pris";
-            this.prisDataGridViewTextBoxColumn.Name = "prisDataGridViewTextBoxColumn";
-            // 
             // lejeOrdreBindingSource
             // 
             this.lejeOrdreBindingSource.DataMember = "LejeOrdre";
             // 
-            // fillBy1ToolStrip
+            // søgToolStrip
             // 
-            this.fillBy1ToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.fillBy1ToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.fillBy1ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cprCvrToolStripLabel,
-            this.cprCvrToolStripTextBox,
-            this.fillBy1ToolStripButton});
-            this.fillBy1ToolStrip.Location = new System.Drawing.Point(135, 5);
-            this.fillBy1ToolStrip.Name = "fillBy1ToolStrip";
-            this.fillBy1ToolStrip.Size = new System.Drawing.Size(246, 27);
-            this.fillBy1ToolStrip.TabIndex = 40;
-            this.fillBy1ToolStrip.Text = "fillBy1ToolStrip";
-            this.fillBy1ToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.fillBy1ToolStrip_ItemClicked);
+            this.søgToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.søgToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.søgToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cprCvrToolStripLabel1,
+            this.cprCvrToolStripTextBox1,
+            this.søgToolStripButton});
+            this.søgToolStrip.Location = new System.Drawing.Point(135, 8);
+            this.søgToolStrip.Name = "søgToolStrip";
+            this.søgToolStrip.Size = new System.Drawing.Size(246, 27);
+            this.søgToolStrip.TabIndex = 41;
+            this.søgToolStrip.Text = "søgToolStrip";
             // 
-            // cprCvrToolStripLabel
+            // cprCvrToolStripLabel1
             // 
-            this.cprCvrToolStripLabel.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cprCvrToolStripLabel.Name = "cprCvrToolStripLabel";
-            this.cprCvrToolStripLabel.Size = new System.Drawing.Size(54, 24);
-            this.cprCvrToolStripLabel.Text = "cprCvr:";
+            this.cprCvrToolStripLabel1.Name = "cprCvrToolStripLabel1";
+            this.cprCvrToolStripLabel1.Size = new System.Drawing.Size(54, 24);
+            this.cprCvrToolStripLabel1.Text = "cprCvr:";
             // 
-            // cprCvrToolStripTextBox
+            // cprCvrToolStripTextBox1
             // 
-            this.cprCvrToolStripTextBox.Name = "cprCvrToolStripTextBox";
-            this.cprCvrToolStripTextBox.Size = new System.Drawing.Size(100, 27);
+            this.cprCvrToolStripTextBox1.Name = "cprCvrToolStripTextBox1";
+            this.cprCvrToolStripTextBox1.Size = new System.Drawing.Size(100, 27);
             // 
-            // fillBy1ToolStripButton
+            // søgToolStripButton
             // 
-            this.fillBy1ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillBy1ToolStripButton.Name = "fillBy1ToolStripButton";
-            this.fillBy1ToolStripButton.Size = new System.Drawing.Size(39, 24);
-            this.fillBy1ToolStripButton.Text = "Søg";
-            this.fillBy1ToolStripButton.Click += new System.EventHandler(this.fillBy1ToolStripButton_Click);
+            this.søgToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.søgToolStripButton.Name = "søgToolStripButton";
+            this.søgToolStripButton.Size = new System.Drawing.Size(39, 24);
+            this.søgToolStripButton.Text = "Søg";
+            this.søgToolStripButton.Click += new System.EventHandler(this.søgToolStripButton_Click);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ordrenr";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ordrenr";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "dato";
+            this.dataGridViewTextBoxColumn2.HeaderText = "dato";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // lejeOrdreBindingSource1
+            // 
+            this.lejeOrdreBindingSource1.DataMember = "LejeOrdre";
+            this.lejeOrdreBindingSource1.DataSource = this.delpinasDataSetSog_DEB;
+            // 
+            // delpinasDataSetSog_DEB
+            // 
+            this.delpinasDataSetSog_DEB.DataSetName = "delpinasDataSetSog_DEB";
+            this.delpinasDataSetSog_DEB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lejeOrdreTableAdapter
+            // 
+            this.lejeOrdreTableAdapter.ClearBeforeFill = true;
             // 
             // Sog_DEB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 607);
-            this.Controls.Add(this.fillBy1ToolStrip);
+            this.Controls.Add(this.søgToolStrip);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonOpdater);
             this.Controls.Add(this.buttonSlet);
@@ -319,10 +328,13 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Sog_DEB";
             this.Text = "Sog_DEB";
+            this.Load += new System.EventHandler(this.Sog_DEB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource)).EndInit();
-            this.fillBy1ToolStrip.ResumeLayout(false);
-            this.fillBy1ToolStrip.PerformLayout();
+            this.søgToolStrip.ResumeLayout(false);
+            this.søgToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSetSog_DEB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,9 +364,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ordrenrDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prisDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStrip fillBy1ToolStrip;
-        private System.Windows.Forms.ToolStripLabel cprCvrToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox cprCvrToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillBy1ToolStripButton;
+        private delpinasDataSetSog_DEB delpinasDataSetSog_DEB;
+        private System.Windows.Forms.BindingSource lejeOrdreBindingSource1;
+        private delpinasDataSetSog_DEBTableAdapters.LejeOrdreTableAdapter lejeOrdreTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.ToolStrip søgToolStrip;
+        private System.Windows.Forms.ToolStripLabel cprCvrToolStripLabel1;
+        private System.Windows.Forms.ToolStripTextBox cprCvrToolStripTextBox1;
+        private System.Windows.Forms.ToolStripButton søgToolStripButton;
     }
 }

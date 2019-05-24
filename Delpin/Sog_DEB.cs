@@ -21,14 +21,14 @@ namespace Delpin
 
         private void buttonSlet_Click(object sender, EventArgs e)
         {
-            long cprCvr = Convert.ToInt64(cprCvrToolStripTextBox.Text);
+            long cprCvr = Convert.ToInt64(cprCvrToolStripTextBox1.Text);
             Controller.SletDEB(cprCvr);
             MessageBox.Show("DEB slettet");
         }
 
         private void buttonOpdater_Click(object sender, EventArgs e)
         {
-            Int64 cprCvr = Convert.ToInt64(cprCvrToolStripTextBox.Text);
+            Int64 cprCvr = Convert.ToInt64(cprCvrToolStripTextBox1.Text);
             string navn = textBoxNavn.Text;
             string gade = textBoxGade.Text;
             int postnr = Convert.ToInt32(textBoxPostNr.Text);
@@ -47,7 +47,24 @@ namespace Delpin
 
         private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
         {
-            long cprCvr = Convert.ToInt64(cprCvrToolStripTextBox.Text);
+
+        }
+
+        private void fillBy1ToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void Sog_DEB_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'delpinasDataSetSog_DEB.LejeOrdre' table. You can move, or remove it, as needed.
+            this.lejeOrdreTableAdapter.Fill(this.delpinasDataSetSog_DEB.LejeOrdre);
+
+        }
+
+        private void søgToolStripButton_Click(object sender, EventArgs e)
+        {
+            long cprCvr = Convert.ToInt64(cprCvrToolStripTextBox1.Text);
             DEB deb = Controller.HentDEB(cprCvr);
             textBoxNavn.Text = deb.Navn;
             textBoxGade.Text = deb.Gade;
@@ -56,10 +73,15 @@ namespace Delpin
             textBoxTlf.Text = deb.Tlf.ToString();
             textBoxEmail.Text = deb.Email;
             textBoxAnsvarlig.Text = deb.Ansvarlig;
-        }
 
-        private void fillBy1ToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
+            try
+            {
+                this.lejeOrdreTableAdapter.Søg(this.delpinasDataSetSog_DEB.LejeOrdre, new System.Nullable<long>(((long)(System.Convert.ChangeType(cprCvrToolStripTextBox1.Text, typeof(long))))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }

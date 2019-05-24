@@ -169,5 +169,12 @@ namespace Delpin
             }
             MessageBox.Show("Ordre oprettet");
         }
+
+        private void Opret_Ordre_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'delpinasDataSet_Opret_Ordre_Afdeling.Afdelinger' table. You can move, or remove it, as needed.
+            this.afdelingerTableAdapter.Fill(this.delpinasDataSet_Opret_Ordre_Afdeling.Afdelinger);
+
+        }
     }
 }

@@ -49,6 +49,21 @@
     <Compile Include="Controller.cs" />
     <Compile Include="Database_Manager.cs" />
     <Compile Include="DEB.cs" />
+    <Compile Include="delpinasDataSetSog_DEB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>delpinasDataSetSog_DEB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="delpinasDataSet_Opret_Ordre_Afdeling.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>delpinasDataSet_Opret_Ordre_Afdeling.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="delpinasDataSet_Sog_Ordre1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>delpinasDataSet_Sog_Ordre1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Hovedmenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +141,39 @@
     <EmbeddedResource Include="Sog_RES.resx">
       <DependentUpon>Sog_RES.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="delpinasDataSetSog_DEB.xsc">
+      <DependentUpon>delpinasDataSetSog_DEB.xsd</DependentUpon>
+    </None>
+    <None Include="delpinasDataSetSog_DEB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>delpinasDataSetSog_DEB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="delpinasDataSetSog_DEB.xss">
+      <DependentUpon>delpinasDataSetSog_DEB.xsd</DependentUpon>
+    </None>
+    <None Include="delpinasDataSet_Opret_Ordre_Afdeling.xsc">
+      <DependentUpon>delpinasDataSet_Opret_Ordre_Afdeling.xsd</DependentUpon>
+    </None>
+    <None Include="delpinasDataSet_Opret_Ordre_Afdeling.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>delpinasDataSet_Opret_Ordre_Afdeling.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="delpinasDataSet_Opret_Ordre_Afdeling.xss">
+      <DependentUpon>delpinasDataSet_Opret_Ordre_Afdeling.xsd</DependentUpon>
+    </None>
+    <None Include="delpinasDataSet_Sog_Ordre1.xsc">
+      <DependentUpon>delpinasDataSet_Sog_Ordre1.xsd</DependentUpon>
+    </None>
+    <None Include="delpinasDataSet_Sog_Ordre1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>delpinasDataSet_Sog_Ordre1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="delpinasDataSet_Sog_Ordre1.xss">
+      <DependentUpon>delpinasDataSet_Sog_Ordre1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
