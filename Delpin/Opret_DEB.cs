@@ -12,7 +12,6 @@ namespace Delpin
 {
     public partial class Opret_DEB : Form
     {
-        Controller c = new Controller();
         public Opret_DEB()
         {
             InitializeComponent();
@@ -33,16 +32,11 @@ namespace Delpin
             int tlf = Convert.ToInt32(textBoxTlf.Text);
             string email = textBoxEmail.Text;
             string ansvarlig = textBoxAnsvarlig.Text;
-            c.GemDEB(cprCvr, navn, gade, postnr, by, tlf, email, ansvarlig);
+            Controller.GemDEB(cprCvr, navn, gade, postnr, by, tlf, email, ansvarlig);
             MessageBox.Show("Kunde oprettet");
         }
 
         private void textBoxCPRCVR_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonKredit_Click(object sender, EventArgs e)
         {
 
         }
