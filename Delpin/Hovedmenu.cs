@@ -37,7 +37,7 @@ namespace Delpin
 
         private void buttonRedigerRes_Click(object sender, EventArgs e)
         {
-            Sog_RES RES = new Sog_RES();
+            Sog_RESS RES = new Sog_RESS();
             RES.ShowDialog();
         }
 

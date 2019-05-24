@@ -47,7 +47,7 @@ namespace Delpin
 
         private void buttonTilfojVare_Click(object sender, EventArgs e)
         {
-            Sog_RES RES = new Sog_RES();
+            Sog_RESS RES = new Sog_RESS();
             RES.ShowDialog();
         }
 

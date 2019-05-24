@@ -1,6 +1,6 @@
 ﻿namespace Delpin
 {
-    partial class Sog_RES
+    partial class Sog_RESS
     {
         /// <summary>
         /// Required designer variable.

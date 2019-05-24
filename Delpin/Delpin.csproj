@@ -102,11 +102,11 @@
     <Compile Include="Sog_Ordre.Designer.cs">
       <DependentUpon>Sog_Ordre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sog_RES.cs">
+    <Compile Include="Sog_RESS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sog_RES.Designer.cs">
-      <DependentUpon>Sog_RES.cs</DependentUpon>
+    <Compile Include="Sog_RESS.Designer.cs">
+      <DependentUpon>Sog_RESS.cs</DependentUpon>
     </Compile>
     <Compile Include="Temp_Katrine.cs" />
     <Compile Include="Temp_Line1.cs" />
@@ -138,8 +138,8 @@
     <EmbeddedResource Include="Sog_Ordre.resx">
       <DependentUpon>Sog_Ordre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sog_RES.resx">
-      <DependentUpon>Sog_RES.cs</DependentUpon>
+    <EmbeddedResource Include="Sog_RESS.resx">
+      <DependentUpon>Sog_RESS.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="delpinasDataSetSog_DEB.xsc">
       <DependentUpon>delpinasDataSetSog_DEB.xsd</DependentUpon>

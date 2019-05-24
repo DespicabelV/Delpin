@@ -12,7 +12,7 @@ using static Delpin.Temp_Line1;
 
 namespace Delpin
 {
-    public partial class Sog_RES : Form
+    public partial class Sog_RESS : Form
     {
         Temp_Line1 temp = new Temp_Line1();
         List<HovedKategori> HovedKategorier;
@@ -20,7 +20,7 @@ namespace Delpin
         List<Res> Resurser;
        
         
-        public Sog_RES()
+        public Sog_RESS()
         {
             InitializeComponent();
             buttonTilføjRes.Visible = false;
