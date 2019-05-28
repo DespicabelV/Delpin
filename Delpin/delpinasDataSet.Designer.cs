@@ -20,9 +20,9 @@ namespace Delpin {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("delpinasDataSet_Sog_Ordre")]
+    [global::System.Xml.Serialization.XmlRootAttribute("delpinasDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class delpinasDataSet_Sog_Ordre : global::System.Data.DataSet {
+    public partial class delpinasDataSet : global::System.Data.DataSet {
         
         private LejeOrdreLinjerDataTable tableLejeOrdreLinjer;
         
@@ -30,7 +30,7 @@ namespace Delpin {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delpinasDataSet_Sog_Ordre() {
+        public delpinasDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Delpin {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected delpinasDataSet_Sog_Ordre(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected delpinasDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace Delpin {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            delpinasDataSet_Sog_Ordre cln = ((delpinasDataSet_Sog_Ordre)(base.Clone()));
+            delpinasDataSet cln = ((delpinasDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace Delpin {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "delpinasDataSet_Sog_Ordre";
+            this.DataSetName = "delpinasDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/delpinasDataSet_Sog_Ordre1.xsd";
+            this.Namespace = "http://tempuri.org/delpinasDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableLejeOrdreLinjer = new LejeOrdreLinjerDataTable();
@@ -225,7 +225,7 @@ namespace Delpin {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            delpinasDataSet_Sog_Ordre ds = new delpinasDataSet_Sog_Ordre();
+            delpinasDataSet ds = new delpinasDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -279,9 +279,15 @@ namespace Delpin {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class LejeOrdreLinjerDataTable : global::System.Data.TypedTableBase<LejeOrdreLinjerRow> {
             
+            private global::System.Data.DataColumn columnordrenr;
+            
             private global::System.Data.DataColumn columnresnr;
             
+            private global::System.Data.DataColumn columnresnavn;
+            
             private global::System.Data.DataColumn columnstartDato;
+            
+            private global::System.Data.DataColumn columnslutDato;
             
             private global::System.Data.DataColumn columnpris;
             
@@ -320,6 +326,14 @@ namespace Delpin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ordrenrColumn {
+                get {
+                    return this.columnordrenr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn resnrColumn {
                 get {
                     return this.columnresnr;
@@ -328,9 +342,25 @@ namespace Delpin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn resnavnColumn {
+                get {
+                    return this.columnresnavn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn startDatoColumn {
                 get {
                     return this.columnstartDato;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn slutDatoColumn {
+                get {
+                    return this.columnslutDato;
                 }
             }
             
@@ -379,11 +409,14 @@ namespace Delpin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LejeOrdreLinjerRow AddLejeOrdreLinjerRow(int resnr, System.DateTime startDato, int pris) {
+            public LejeOrdreLinjerRow AddLejeOrdreLinjerRow(int ordrenr, int resnr, string resnavn, System.DateTime startDato, System.DateTime slutDato, int pris) {
                 LejeOrdreLinjerRow rowLejeOrdreLinjerRow = ((LejeOrdreLinjerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        ordrenr,
                         resnr,
+                        resnavn,
                         startDato,
+                        slutDato,
                         pris};
                 rowLejeOrdreLinjerRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLejeOrdreLinjerRow);
@@ -407,20 +440,30 @@ namespace Delpin {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnordrenr = base.Columns["ordrenr"];
                 this.columnresnr = base.Columns["resnr"];
+                this.columnresnavn = base.Columns["resnavn"];
                 this.columnstartDato = base.Columns["startDato"];
+                this.columnslutDato = base.Columns["slutDato"];
                 this.columnpris = base.Columns["pris"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnordrenr = new global::System.Data.DataColumn("ordrenr", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnordrenr);
                 this.columnresnr = new global::System.Data.DataColumn("resnr", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnresnr);
+                this.columnresnavn = new global::System.Data.DataColumn("resnavn", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnresnavn);
                 this.columnstartDato = new global::System.Data.DataColumn("startDato", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstartDato);
+                this.columnslutDato = new global::System.Data.DataColumn("slutDato", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnslutDato);
                 this.columnpris = new global::System.Data.DataColumn("pris", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpris);
+                this.columnresnavn.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -488,7 +531,7 @@ namespace Delpin {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                delpinasDataSet_Sog_Ordre ds = new delpinasDataSet_Sog_Ordre();
+                delpinasDataSet ds = new delpinasDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -563,6 +606,22 @@ namespace Delpin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ordrenr {
+                get {
+                    try {
+                        return ((int)(this[this.tableLejeOrdreLinjer.ordrenrColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ordrenr\' in table \'LejeOrdreLinjer\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLejeOrdreLinjer.ordrenrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int resnr {
                 get {
                     try {
@@ -574,6 +633,22 @@ namespace Delpin {
                 }
                 set {
                     this[this.tableLejeOrdreLinjer.resnrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string resnavn {
+                get {
+                    try {
+                        return ((string)(this[this.tableLejeOrdreLinjer.resnavnColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'resnavn\' in table \'LejeOrdreLinjer\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLejeOrdreLinjer.resnavnColumn] = value;
                 }
             }
             
@@ -595,6 +670,22 @@ namespace Delpin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime slutDato {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableLejeOrdreLinjer.slutDatoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'slutDato\' in table \'LejeOrdreLinjer\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLejeOrdreLinjer.slutDatoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int pris {
                 get {
                     try {
@@ -611,6 +702,18 @@ namespace Delpin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsordrenrNull() {
+                return this.IsNull(this.tableLejeOrdreLinjer.ordrenrColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetordrenrNull() {
+                this[this.tableLejeOrdreLinjer.ordrenrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsresnrNull() {
                 return this.IsNull(this.tableLejeOrdreLinjer.resnrColumn);
             }
@@ -623,6 +726,18 @@ namespace Delpin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsresnavnNull() {
+                return this.IsNull(this.tableLejeOrdreLinjer.resnavnColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetresnavnNull() {
+                this[this.tableLejeOrdreLinjer.resnavnColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsstartDatoNull() {
                 return this.IsNull(this.tableLejeOrdreLinjer.startDatoColumn);
             }
@@ -631,6 +746,18 @@ namespace Delpin {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetstartDatoNull() {
                 this[this.tableLejeOrdreLinjer.startDatoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsslutDatoNull() {
+                return this.IsNull(this.tableLejeOrdreLinjer.slutDatoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetslutDatoNull() {
+                this[this.tableLejeOrdreLinjer.slutDatoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -681,7 +808,7 @@ namespace Delpin {
         }
     }
 }
-namespace Delpin.delpinasDataSet_Sog_OrdreTableAdapters {
+namespace Delpin.delpinasDataSetTableAdapters {
     
     
     /// <summary>
@@ -805,17 +932,24 @@ namespace Delpin.delpinasDataSet_Sog_OrdreTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "LejeOrdreLinjer";
+            tableMapping.ColumnMappings.Add("ordrenr", "ordrenr");
             tableMapping.ColumnMappings.Add("resnr", "resnr");
+            tableMapping.ColumnMappings.Add("resnavn", "resnavn");
             tableMapping.ColumnMappings.Add("startDato", "startDato");
+            tableMapping.ColumnMappings.Add("slutDato", "slutDato");
             tableMapping.ColumnMappings.Add("pris", "pris");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[LejeOrdreLinjer] ([resnr], [startDato], [pris]) VALUES (@resnr" +
-                ", @startDato, @pris)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[LejeOrdreLinjer] ([ordrenr], [resnr], [resnavn], [startDato], " +
+                "[slutDato], [pris]) VALUES (@ordrenr, @resnr, @resnavn, @startDato, @slutDato, @" +
+                "pris)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ordrenr", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ordrenr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@resnr", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resnr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@resnavn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "resnavn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@startDato", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "startDato", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@slutDato", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "slutDato", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pris", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pris", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -829,24 +963,19 @@ namespace Delpin.delpinasDataSet_Sog_OrdreTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT resnr, startDato, pris FROM dbo.LejeOrdreLinjer";
+            this._commandCollection[0].CommandText = "SELECT ordrenr, resnr, resnavn, startDato, slutDato, pris FROM dbo.LejeOrdreLinje" +
+                "r";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT resnr, startDato, pris FROM dbo.LejeOrdreLinjer WHERE ordrenr = @OrdreNumm" +
-                "er";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrdreNummer", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ordrenr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(delpinasDataSet_Sog_Ordre.LejeOrdreLinjerDataTable dataTable) {
+        public virtual int Fill(delpinasDataSet.LejeOrdreLinjerDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -859,9 +988,9 @@ namespace Delpin.delpinasDataSet_Sog_OrdreTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual delpinasDataSet_Sog_Ordre.LejeOrdreLinjerDataTable GetData() {
+        public virtual delpinasDataSet.LejeOrdreLinjerDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            delpinasDataSet_Sog_Ordre.LejeOrdreLinjerDataTable dataTable = new delpinasDataSet_Sog_Ordre.LejeOrdreLinjerDataTable();
+            delpinasDataSet.LejeOrdreLinjerDataTable dataTable = new delpinasDataSet.LejeOrdreLinjerDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -869,33 +998,14 @@ namespace Delpin.delpinasDataSet_Sog_OrdreTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int Søg(delpinasDataSet_Sog_Ordre.LejeOrdreLinjerDataTable dataTable, global::System.Nullable<int> OrdreNummer) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((OrdreNummer.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(OrdreNummer.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(delpinasDataSet_Sog_Ordre.LejeOrdreLinjerDataTable dataTable) {
+        public virtual int Update(delpinasDataSet.LejeOrdreLinjerDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(delpinasDataSet_Sog_Ordre dataSet) {
+        public virtual int Update(delpinasDataSet dataSet) {
             return this.Adapter.Update(dataSet, "LejeOrdreLinjer");
         }
         
@@ -918,24 +1028,42 @@ namespace Delpin.delpinasDataSet_Sog_OrdreTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> resnr, global::System.Nullable<global::System.DateTime> startDato, global::System.Nullable<int> pris) {
-            if ((resnr.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(resnr.Value));
+        public virtual int Insert(global::System.Nullable<int> ordrenr, global::System.Nullable<int> resnr, string resnavn, global::System.Nullable<global::System.DateTime> startDato, global::System.Nullable<global::System.DateTime> slutDato, global::System.Nullable<int> pris) {
+            if ((ordrenr.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ordrenr.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((startDato.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(startDato.Value));
+            if ((resnr.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(resnr.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((pris.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(pris.Value));
+            if ((resnavn == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(resnavn));
+            }
+            if ((startDato.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(startDato.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((slutDato.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(slutDato.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((pris.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(pris.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1045,7 +1173,7 @@ namespace Delpin.delpinasDataSet_Sog_OrdreTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(delpinasDataSet_Sog_Ordre dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(delpinasDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._lejeOrdreLinjerTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.LejeOrdreLinjer.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1064,7 +1192,7 @@ namespace Delpin.delpinasDataSet_Sog_OrdreTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(delpinasDataSet_Sog_Ordre dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(delpinasDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._lejeOrdreLinjerTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.LejeOrdreLinjer.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1082,7 +1210,7 @@ namespace Delpin.delpinasDataSet_Sog_OrdreTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(delpinasDataSet_Sog_Ordre dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(delpinasDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._lejeOrdreLinjerTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.LejeOrdreLinjer.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1124,7 +1252,7 @@ namespace Delpin.delpinasDataSet_Sog_OrdreTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(delpinasDataSet_Sog_Ordre dataSet) {
+        public virtual int UpdateAll(delpinasDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

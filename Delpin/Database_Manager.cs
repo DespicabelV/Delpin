@@ -134,8 +134,9 @@ namespace Delpin
 
             string SelectSqlString = $"select LOL.resnr, LOL.startDato, LOL.slutDato, LO.gade, LO.postnr, LO.levering, LO.byen from LejeOrdreLinjer LOL " +
                 $"join LejeOrdre LO on LOL.ordrenr = LOL.ordrenr " +
-                $"where startDato >= '{start}' AND slutDato <= '{slut}' " +
-                $"Order by startDato";
+                $"where startDato >= '{start}' AND startDato <= '{slut}' " +
+                $"OR slutDato <= '{slut}' AND slutDato > '{start}' " +
+                $"Order by startDato ";
             SqlConnection conn = new SqlConnection(Connection());
             conn.Open();
             SqlCommand comselect = new SqlCommand(SelectSqlString, conn);
