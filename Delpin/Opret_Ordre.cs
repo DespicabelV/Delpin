@@ -12,7 +12,8 @@ namespace Delpin
 {
     public partial class Opret_Ordre : Form
     {
-        Temp_Viggo test = new Temp_Viggo();
+        Database_Manager DBM = new Database_Manager();
+        int index = 0;
         public Opret_Ordre()
         {
             InitializeComponent();
@@ -24,15 +25,14 @@ namespace Delpin
             label6.Visible = false;
             label4.Visible = false;
             label7.Visible = false;
-
-
+            
         }
 
         private void buttonSog_Click(object sender, EventArgs e)
         {
             string navn, byen, gade;
             int postnr;
-            test.Opret_Ordre_Sog(Convert.ToInt64(textBoxCVRCPR.Text), out navn, out gade, out postnr, out byen);
+            DBM.Opret_Ordre_Sog(Convert.ToInt64(textBoxCVRCPR.Text), out navn, out gade, out postnr, out byen);
             textBoxNavn.Text = navn;
             textBoxBy.Text = byen;
             textBoxGade.Text = gade;
@@ -105,7 +105,6 @@ namespace Delpin
             for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
             {
                 days = (Convert.ToDateTime(dataGridView1.Rows[i].Cells["Slut"].Value) - Convert.ToDateTime(dataGridView1.Rows[i].Cells["Start"].Value)).TotalDays;
-                //days = (Convert.ToDateTime("2019-05-25") - Convert.ToDateTime("2019-05-23")).TotalDays;
                 dataGridView1.Rows[i].Cells["Pris"].Value = (days * Convert.ToDouble(dataGridView1.Rows[i].Cells["Pris_Pr_Dag"].Value));
             }
 
@@ -134,7 +133,7 @@ namespace Delpin
 
             if (checkBoxNej.Checked == true)
             {
-                test.Opret_Ordre_Afdeling(comboBoxAfdeling.Text, out byen, out postnr, out gade);
+                DBM.Opret_Ordre_Afdeling(comboBoxAfdeling.Text, out byen, out postnr, out gade);
             }
             else
             {
@@ -152,7 +151,7 @@ namespace Delpin
                 levering = 0;
             }
 
-            test.Opret_Ordre_OO(dato, levering, gade, postnr, byen, cprcvr, out ordrenr);
+            DBM.Opret_Ordre_OO(dato, levering, gade, postnr, byen, cprcvr, out ordrenr);
 
             string startdato, slutdato, resnavn;
             int resnr, pris;
@@ -165,7 +164,7 @@ namespace Delpin
                 slutdato  = Convert.ToString(dataGridView1.Rows[i].Cells["Slut"].Value);
                 pris      = Convert.ToInt32(dataGridView1.Rows[i].Cells["Pris"].Value);
                 
-            test.Opret_Ordre_LejeOrdreLinjer(ordrenr, resnr,resnavn, startdato, slutdato, pris);
+            DBM.Opret_Ordre_LejeOrdreLinjer(ordrenr, resnr,resnavn, startdato, slutdato, pris);
             }
             MessageBox.Show("Ordre oprettet");
         }
@@ -175,6 +174,17 @@ namespace Delpin
             // TODO: This line of code loads data into the 'delpinasDataSet_Opret_Ordre_Afdeling.Afdelinger' table. You can move, or remove it, as needed.
             this.afdelingerTableAdapter.Fill(this.delpinasDataSet_Opret_Ordre_Afdeling.Afdelinger);
 
+        }
+
+        private void buttonIndset_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Add();
+            dataGridView1.Rows[index].Cells["Navn"].Value = Global.global_navn_Sog_Ress;
+            dataGridView1.Rows[index].Cells["Pris_Pr_Dag"].Value = Global.global_pris_Sog_Ress;
+            dataGridView1.Rows[index].Cells["Res_Nr"].Value = Global.global_resnr_Sog_Ress;
+            dataGridView1.Rows[index].Cells["Slut"].Value = Global.global_slut_Sog_Ress;
+            dataGridView1.Rows[index].Cells["Start"].Value = Global.global_start_Sog_Ress;
+            index++;
         }
     }
 }

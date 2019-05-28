@@ -64,6 +64,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>delpinasDataSet_Sog_Ordre1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Hovedmenu.cs">
       <SubType>Form</SubType>
     </Compile>

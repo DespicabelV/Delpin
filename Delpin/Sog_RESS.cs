@@ -18,12 +18,11 @@ namespace Delpin
         List<HovedKategori> HovedKategorier;
         List<Kategori> Katagorier;
         List<Res> Resurser;
-       
         
         public Sog_RESS()
         {
             InitializeComponent();
-            buttonTilføjRes.Visible = false;
+            buttonTilfojRes.Visible = true;
             HovedKategorier = temp.HentHovedKategori();
             Katagorier = new List<Kategori>();
             Resurser = new List<Res>();
@@ -44,6 +43,7 @@ namespace Delpin
             comboBoxKategori.DataSource = Katagorier;
 
         }
+
         // Indsætter kategori i combobox og indsætter res i datagridview
         private void comboBoxKategori_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -55,14 +55,18 @@ namespace Delpin
 
         }
 
-        private void textBoxHovedKategori_TextChanged(object sender, EventArgs e)
+        private void buttonTilføjRes_Click(object sender, EventArgs e)
         {
-            
-        }
+            int index;
+            index = dataGridView1.SelectedRows[0].Index;
 
-        private void comboBoxHovedKategori_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
+            Global.global_navn_Sog_Ress  = Convert.ToString(dataGridView1.Rows[index].Cells["Navn"].Value);
+            Global.global_start_Sog_Ress = Convert.ToString(dateTimePickerStart.Value.ToString("yyyy-MM-dd"));
+            Global.global_slut_Sog_Ress  = Convert.ToString(dateTimePickerSlut.Value.ToString("yyyy-MM-dd"));
+            Global.global_resnr_Sog_Ress = Convert.ToInt32(dataGridView1.Rows[index].Cells["Resnr"].Value);
+            Global.global_pris_Sog_Ress  = Convert.ToInt64(dataGridView1.Rows[index].Cells["Pris"].Value);
+
+            this.Close();
         }
     }
 }
