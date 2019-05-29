@@ -293,5 +293,34 @@ namespace Delpin
             }
         }
 
+        public void Sog_Ordre_Hent_Dato (int ID, out string start, out string slut)
+        {
+            start = ""; slut = "";
+            try
+            {
+                conn = new SqlConnection(Connection());
+                conn.Open();
+                SqlCommand Sog_Ordre_Hent_Dato = new SqlCommand();
+                Sog_Ordre_Hent_Dato.CommandText = $"select startDato, slutDato from LejeOrdreLinjer where ID = {ID}";
+                Sog_Ordre_Hent_Dato.Connection = conn;
+                reader = Sog_Ordre_Hent_Dato.ExecuteReader();
+                while (reader.Read())
+                {
+                    start = reader["startDato"].ToString();
+                    slut = reader["slutDato"].ToString();
+                }
+            }
+            catch (SqlException ex)
+            {
+
+                Console.WriteLine("Der er sket en fejl i din SQL");
+                //Udskriver fejltypen:
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }

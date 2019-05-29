@@ -12,6 +12,8 @@ namespace Delpin
 {
     public partial class Sog_Ordre : Form
     {
+        Database_Manager DBM = new Database_Manager();
+
         public Sog_Ordre()
         {
             InitializeComponent();
@@ -26,6 +28,18 @@ namespace Delpin
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+            int ID;
+            double prisF, prisE, dageF, dageE;
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            {
+                ID = Convert.ToInt32(dataGridView1.Rows[i].Cells[6].Value);
+                DBM.Sog_Ordre_Hent_Dato(ID, out string start, out string slut);
+                dageF = (Convert.ToDateTime(slut) - Convert.ToDateTime(start)).TotalDays;
+                prisF = Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value) / dageF;
+                dageE = (Convert.ToDateTime(dataGridView1.Rows[i].Cells[4].Value) - Convert.ToDateTime(dataGridView1.Rows[i].Cells[3].Value)).TotalDays;
+                prisE = prisF * dageE;
+                dataGridView1.Rows[i].Cells[5].Value = prisE;
+            }
             this.lejeOrdreLinjerTableAdapter.Update(this.delpinasDataSetSog_Ordre.LejeOrdreLinjer);
         }
 

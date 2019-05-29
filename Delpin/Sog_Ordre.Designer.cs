@@ -30,16 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonUpdate = new System.Windows.Forms.Button();
-            this.buttonFaktura = new System.Windows.Forms.Button();
-            this.buttonKvittering = new System.Windows.Forms.Button();
-            this.søgToolStrip = new System.Windows.Forms.ToolStrip();
-            this.ordreNummerToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.ordreNummerToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.søgToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.lejeOrdreLinjerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.delpinasDataSetSog_Ordre = new Delpin.delpinasDataSetSog_Ordre();
-            this.lejeOrdreLinjerTableAdapter = new Delpin.delpinasDataSetSog_OrdreTableAdapters.LejeOrdreLinjerTableAdapter();
             this.ordrenrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resnrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resnavnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,10 +37,20 @@
             this.slutDatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lejeOrdreLinjerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.delpinasDataSetSog_Ordre = new Delpin.delpinasDataSetSog_Ordre();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonFaktura = new System.Windows.Forms.Button();
+            this.buttonKvittering = new System.Windows.Forms.Button();
+            this.søgToolStrip = new System.Windows.Forms.ToolStrip();
+            this.ordreNummerToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.ordreNummerToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.søgToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.lejeOrdreLinjerTableAdapter = new Delpin.delpinasDataSetSog_OrdreTableAdapters.LejeOrdreLinjerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.søgToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreLinjerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSetSog_Ordre)).BeginInit();
+            this.søgToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -72,13 +72,69 @@
             this.dataGridView1.Size = new System.Drawing.Size(954, 251);
             this.dataGridView1.TabIndex = 0;
             // 
+            // ordrenrDataGridViewTextBoxColumn
+            // 
+            this.ordrenrDataGridViewTextBoxColumn.DataPropertyName = "ordrenr";
+            this.ordrenrDataGridViewTextBoxColumn.HeaderText = "ordrenr";
+            this.ordrenrDataGridViewTextBoxColumn.Name = "ordrenrDataGridViewTextBoxColumn";
+            this.ordrenrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // resnrDataGridViewTextBoxColumn
+            // 
+            this.resnrDataGridViewTextBoxColumn.DataPropertyName = "resnr";
+            this.resnrDataGridViewTextBoxColumn.HeaderText = "resnr";
+            this.resnrDataGridViewTextBoxColumn.Name = "resnrDataGridViewTextBoxColumn";
+            this.resnrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // resnavnDataGridViewTextBoxColumn
+            // 
+            this.resnavnDataGridViewTextBoxColumn.DataPropertyName = "resnavn";
+            this.resnavnDataGridViewTextBoxColumn.HeaderText = "resnavn";
+            this.resnavnDataGridViewTextBoxColumn.Name = "resnavnDataGridViewTextBoxColumn";
+            this.resnavnDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // startDatoDataGridViewTextBoxColumn
+            // 
+            this.startDatoDataGridViewTextBoxColumn.DataPropertyName = "startDato";
+            this.startDatoDataGridViewTextBoxColumn.HeaderText = "startDato";
+            this.startDatoDataGridViewTextBoxColumn.Name = "startDatoDataGridViewTextBoxColumn";
+            // 
+            // slutDatoDataGridViewTextBoxColumn
+            // 
+            this.slutDatoDataGridViewTextBoxColumn.DataPropertyName = "slutDato";
+            this.slutDatoDataGridViewTextBoxColumn.HeaderText = "slutDato";
+            this.slutDatoDataGridViewTextBoxColumn.Name = "slutDatoDataGridViewTextBoxColumn";
+            // 
+            // prisDataGridViewTextBoxColumn
+            // 
+            this.prisDataGridViewTextBoxColumn.DataPropertyName = "pris";
+            this.prisDataGridViewTextBoxColumn.HeaderText = "pris";
+            this.prisDataGridViewTextBoxColumn.Name = "prisDataGridViewTextBoxColumn";
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lejeOrdreLinjerBindingSource
+            // 
+            this.lejeOrdreLinjerBindingSource.DataMember = "LejeOrdreLinjer";
+            this.lejeOrdreLinjerBindingSource.DataSource = this.delpinasDataSetSog_Ordre;
+            // 
+            // delpinasDataSetSog_Ordre
+            // 
+            this.delpinasDataSetSog_Ordre.DataSetName = "delpinasDataSetSog_Ordre";
+            this.delpinasDataSetSog_Ordre.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // buttonUpdate
             // 
             this.buttonUpdate.Location = new System.Drawing.Point(871, 369);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(95, 40);
             this.buttonUpdate.TabIndex = 1;
-            this.buttonUpdate.Text = "Update";
+            this.buttonUpdate.Text = "Opdater";
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
@@ -133,65 +189,9 @@
             this.søgToolStripButton.Text = "Søg";
             this.søgToolStripButton.Click += new System.EventHandler(this.søgToolStripButton_Click);
             // 
-            // lejeOrdreLinjerBindingSource
-            // 
-            this.lejeOrdreLinjerBindingSource.DataMember = "LejeOrdreLinjer";
-            this.lejeOrdreLinjerBindingSource.DataSource = this.delpinasDataSetSog_Ordre;
-            // 
-            // delpinasDataSetSog_Ordre
-            // 
-            this.delpinasDataSetSog_Ordre.DataSetName = "delpinasDataSetSog_Ordre";
-            this.delpinasDataSetSog_Ordre.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // lejeOrdreLinjerTableAdapter
             // 
             this.lejeOrdreLinjerTableAdapter.ClearBeforeFill = true;
-            // 
-            // ordrenrDataGridViewTextBoxColumn
-            // 
-            this.ordrenrDataGridViewTextBoxColumn.DataPropertyName = "ordrenr";
-            this.ordrenrDataGridViewTextBoxColumn.HeaderText = "ordrenr";
-            this.ordrenrDataGridViewTextBoxColumn.Name = "ordrenrDataGridViewTextBoxColumn";
-            this.ordrenrDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // resnrDataGridViewTextBoxColumn
-            // 
-            this.resnrDataGridViewTextBoxColumn.DataPropertyName = "resnr";
-            this.resnrDataGridViewTextBoxColumn.HeaderText = "resnr";
-            this.resnrDataGridViewTextBoxColumn.Name = "resnrDataGridViewTextBoxColumn";
-            this.resnrDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // resnavnDataGridViewTextBoxColumn
-            // 
-            this.resnavnDataGridViewTextBoxColumn.DataPropertyName = "resnavn";
-            this.resnavnDataGridViewTextBoxColumn.HeaderText = "resnavn";
-            this.resnavnDataGridViewTextBoxColumn.Name = "resnavnDataGridViewTextBoxColumn";
-            this.resnavnDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // startDatoDataGridViewTextBoxColumn
-            // 
-            this.startDatoDataGridViewTextBoxColumn.DataPropertyName = "startDato";
-            this.startDatoDataGridViewTextBoxColumn.HeaderText = "startDato";
-            this.startDatoDataGridViewTextBoxColumn.Name = "startDatoDataGridViewTextBoxColumn";
-            // 
-            // slutDatoDataGridViewTextBoxColumn
-            // 
-            this.slutDatoDataGridViewTextBoxColumn.DataPropertyName = "slutDato";
-            this.slutDatoDataGridViewTextBoxColumn.HeaderText = "slutDato";
-            this.slutDatoDataGridViewTextBoxColumn.Name = "slutDatoDataGridViewTextBoxColumn";
-            // 
-            // prisDataGridViewTextBoxColumn
-            // 
-            this.prisDataGridViewTextBoxColumn.DataPropertyName = "pris";
-            this.prisDataGridViewTextBoxColumn.HeaderText = "pris";
-            this.prisDataGridViewTextBoxColumn.Name = "prisDataGridViewTextBoxColumn";
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Sog_Ordre
             // 
@@ -207,10 +207,10 @@
             this.Text = "Sog_Ordre";
             this.Load += new System.EventHandler(this.Sog_Ordre_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.søgToolStrip.ResumeLayout(false);
-            this.søgToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreLinjerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSetSog_Ordre)).EndInit();
+            this.søgToolStrip.ResumeLayout(false);
+            this.søgToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
