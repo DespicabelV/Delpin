@@ -18,12 +18,12 @@ namespace Delpin
             InitializeComponent();
         }
 
-        private void buttonSlet_Click(object sender, EventArgs e)
-        {
-            long cprCvr = Convert.ToInt64(cprCvrToolStripTextBox1.Text);
-            cont.SletDEB(cprCvr);
-            MessageBox.Show("DEB slettet");
-        }
+        //private void buttonSlet_Click(object sender, EventArgs e)
+        //{
+        //    long cprCvr = Convert.ToInt64(cprCvrToolStripTextBox1.Text);
+        //    cont.SletDEB(cprCvr);
+        //    MessageBox.Show("DEB slettet");
+        //}
 
         private void buttonOpdater_Click(object sender, EventArgs e)
         {

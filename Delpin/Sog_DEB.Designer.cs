@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.buttonSlet = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxBy = new System.Windows.Forms.TextBox();
             this.textBoxAnsvarlig = new System.Windows.Forms.TextBox();
@@ -47,8 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonOpdater = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lejeOrdreBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.delpinasDataSetSog_DEB = new Delpin.delpinasDataSetSog_DEB();
             this.lejeOrdreBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -57,23 +54,14 @@
             this.cprCvrToolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.søgToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.lejeOrdreTableAdapter = new Delpin.delpinasDataSetSog_DEBTableAdapters.LejeOrdreTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSetSog_DEB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource)).BeginInit();
             this.søgToolStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // buttonSlet
-            // 
-            this.buttonSlet.Location = new System.Drawing.Point(413, 546);
-            this.buttonSlet.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonSlet.Name = "buttonSlet";
-            this.buttonSlet.Size = new System.Drawing.Size(116, 41);
-            this.buttonSlet.TabIndex = 37;
-            this.buttonSlet.Text = "Slet";
-            this.buttonSlet.UseVisualStyleBackColor = true;
-            this.buttonSlet.Click += new System.EventHandler(this.buttonSlet_Click);
             // 
             // label8
             // 
@@ -236,19 +224,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(633, 308);
             this.dataGridView1.TabIndex = 39;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ordrenr";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ordrenr";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "dato";
-            this.dataGridViewTextBoxColumn2.HeaderText = "dato";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
             // lejeOrdreBindingSource1
             // 
             this.lejeOrdreBindingSource1.DataMember = "LejeOrdre";
@@ -300,6 +275,20 @@
             // 
             this.lejeOrdreTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ordrenr";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ordrenr";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "dato";
+            this.dataGridViewTextBoxColumn2.HeaderText = "dato";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
             // Sog_DEB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -308,7 +297,6 @@
             this.Controls.Add(this.søgToolStrip);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonOpdater);
-            this.Controls.Add(this.buttonSlet);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxBy);
             this.Controls.Add(this.textBoxAnsvarlig);
@@ -340,8 +328,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonSlet;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxBy;
         private System.Windows.Forms.TextBox textBoxAnsvarlig;
@@ -366,11 +352,11 @@
         private delpinasDataSetSog_DEB delpinasDataSetSog_DEB;
         private System.Windows.Forms.BindingSource lejeOrdreBindingSource1;
         private delpinasDataSetSog_DEBTableAdapters.LejeOrdreTableAdapter lejeOrdreTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.ToolStrip søgToolStrip;
         private System.Windows.Forms.ToolStripLabel cprCvrToolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox cprCvrToolStripTextBox1;
         private System.Windows.Forms.ToolStripButton søgToolStripButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

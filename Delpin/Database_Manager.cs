@@ -81,9 +81,10 @@ namespace Delpin
         {
             try
             {
-                string DeleteSqlString = $"Delete from DEB where cprCvr = {cprCvr}";
+                string DeleteSqlString = $"Delete from LejeOrdreLinjer where cprCvr" +
+                    $"Delete from DEB where cprCvr = {cprCvr}";
                 Console.WriteLine(DeleteSqlString);
-                SqlConnection conn = new SqlConnection(Connection());
+                conn = new SqlConnection(Connection());
                 conn.Open();
                 SqlCommand com = new SqlCommand(DeleteSqlString, conn);
                 com.ExecuteNonQuery();
@@ -108,7 +109,7 @@ namespace Delpin
                     $"navn = '{deb.Navn}', gade = '{deb.Gade}', postnr = {deb.Postnr}, byen = '{deb.By}', tlf = {deb.Tlf}," +
                     $" email = '{deb.Email}', ansvarlig = '{deb.Ansvarlig}' where cprCvr = {deb.CprCvr}";
                 Console.WriteLine(UpdateSqlString);
-                SqlConnection conn = new SqlConnection(Connection());
+                conn = new SqlConnection(Connection());
                 conn.Open();
                 SqlCommand com = new SqlCommand(UpdateSqlString, conn);
                 com.ExecuteNonQuery();
