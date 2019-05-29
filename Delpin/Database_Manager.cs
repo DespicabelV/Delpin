@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Delpin
 {
@@ -19,35 +20,6 @@ namespace Delpin
             return "Data Source=den1.mssql7.gear.host; Initial Catalog=delpinas; User Id=delpinas; Password=Lu3wumM-!cTu";
         }
 
-        //Forbinder databasen
-        private void ForbindDatabase(string kommando)
-        {
-            try
-            {
-                Console.WriteLine(kommando);
-                conn = new SqlConnection(Connection());
-                conn.Open();
-                com = new SqlCommand(kommando, conn);
-                com.ExecuteNonQuery();
-                conn.Close();
-            }
-            catch (SqlException ex)
-            {
-
-                Console.WriteLine("Der er sket en fejl i din SQL");
-                //Udskriver fejltypen:
-                Console.WriteLine(ex.Message);
-                //Udskriver kommandoen:
-                Console.WriteLine(com.CommandText);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-
-            
-        }
         public void IndsætDEB(DEB deb)
         {
             try
@@ -59,16 +31,11 @@ namespace Delpin
                 conn.Open();
                 com = new SqlCommand(InsertSqlString, conn);
                 com.ExecuteNonQuery();
-                conn.Close();
             }
             catch (SqlException ex)
             {
-
-                Console.WriteLine("Der er sket en fejl i din SQL");
-                //Udskriver fejltypen:
-                Console.WriteLine(ex.Message);
-                //Udskriver kommandoen:
-                Console.WriteLine(com.CommandText);
+                MessageBox.Show("Der er sket en fejl i din SQL\n" +
+                    ex.Message + "\n" + com.CommandText);
             }
             finally
             {
@@ -79,90 +46,128 @@ namespace Delpin
         public DEB HentDEB(long cprCvr)
         {
             DEB deb = new DEB();
-            string SelectSqlString = $"Select * from DEB where cprCvr = {cprCvr}";
-            SqlConnection conn = new SqlConnection(Connection());
-            conn.Open();
-            SqlCommand comselect = new SqlCommand(SelectSqlString, conn);
-
-            SqlDataReader myReader = comselect.ExecuteReader();
-            while (myReader.Read())
+            try
             {
-                deb = new DEB(Convert.ToInt64(myReader["cprCvr"].ToString()),
-                myReader["navn"].ToString(),
-                myReader["gade"].ToString(),
-                Convert.ToInt32(myReader["postnr"].ToString()),
-                myReader["byen"].ToString(),
-                Convert.ToInt32(myReader["tlf"].ToString()),
-                myReader["email"].ToString(),
-                myReader["ansvarlig"].ToString());
-
-
+                conn = new SqlConnection(Connection());
+                string SelectSqlString = $"Select * from DEB where cprCvr = {cprCvr}";
+                conn.Open();
+                SqlCommand comselect = new SqlCommand(SelectSqlString, conn);
+                SqlDataReader myReader = comselect.ExecuteReader();
+                while (myReader.Read())
+                {
+                    deb = new DEB(Convert.ToInt64(myReader["cprCvr"].ToString()),
+                    myReader["navn"].ToString(),
+                    myReader["gade"].ToString(),
+                    Convert.ToInt32(myReader["postnr"].ToString()),
+                    myReader["byen"].ToString(),
+                    Convert.ToInt32(myReader["tlf"].ToString()),
+                    myReader["email"].ToString(),
+                    myReader["ansvarlig"].ToString());
+                }
             }
-            myReader.Close();
-            conn.Close();
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Der er sket en fejl i din SQL\n" +
+                    ex.Message + "\n" + com.CommandText);
+            }
+            finally
+            {
+                conn.Close();
+            }
             return deb;
         }
 
         public void SletDEB(long cprCvr)
         {
-            string DeleteSqlString = $"Delete from DEB where cprCvr = {cprCvr}";
-            Console.WriteLine(DeleteSqlString);
-            SqlConnection conn = new SqlConnection(Connection());
-            conn.Open();
-            SqlCommand com = new SqlCommand(DeleteSqlString, conn);
-            com.ExecuteNonQuery();
-            conn.Close();
+            try
+            {
+                string DeleteSqlString = $"Delete from DEB where cprCvr = {cprCvr}";
+                Console.WriteLine(DeleteSqlString);
+                SqlConnection conn = new SqlConnection(Connection());
+                conn.Open();
+                SqlCommand com = new SqlCommand(DeleteSqlString, conn);
+                com.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Der er sket en fejl i din SQL\n" +
+                    ex.Message + "\n" + com.CommandText);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
         }
  
         public void UpdateDEB(DEB deb)
         {
-            string UpdateSqlString = $"Update DEB set cprCvr = '{deb.CprCvr}', " +
-                $"navn = '{deb.Navn}', gade = '{deb.Gade}', postnr = {deb.Postnr}, byen = '{deb.By}', tlf = {deb.Tlf}," +
-                $" email = '{deb.Email}', ansvarlig = '{deb.Ansvarlig}' where cprCvr = {deb.CprCvr}";
-            Console.WriteLine(UpdateSqlString);
-            SqlConnection conn = new SqlConnection(Connection());
-            conn.Open();
-            SqlCommand com = new SqlCommand(UpdateSqlString, conn);
-            com.ExecuteNonQuery();
-            conn.Close();
+            try
+            {
+                string UpdateSqlString = $"Update DEB set cprCvr = '{deb.CprCvr}', " +
+                    $"navn = '{deb.Navn}', gade = '{deb.Gade}', postnr = {deb.Postnr}, byen = '{deb.By}', tlf = {deb.Tlf}," +
+                    $" email = '{deb.Email}', ansvarlig = '{deb.Ansvarlig}' where cprCvr = {deb.CprCvr}";
+                Console.WriteLine(UpdateSqlString);
+                SqlConnection conn = new SqlConnection(Connection());
+                conn.Open();
+                SqlCommand com = new SqlCommand(UpdateSqlString, conn);
+                com.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Der er sket en fejl i din SQL\n" +
+                    ex.Message + "\n" + com.CommandText);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         public List<string> HentLejeListe(string start, string slut)
         {
             List<string> linje = new List<string>();
-            string slutdato, startdato, resnr, gade, postnummer, by, nyLinje, levering;
-
-            string SelectSqlString = $"select LOL.resnr, LOL.startDato, LOL.slutDato, LO.gade, LO.postnr, LO.levering, LO.byen from LejeOrdreLinjer LOL " +
-                $"join LejeOrdre LO on LOL.ordrenr = LOL.ordrenr " +
-                $"where startDato >= '{start}' AND startDato <= '{slut}' " +
-                $"OR slutDato <= '{slut}' AND slutDato > '{start}' " +
-                $"Order by startDato ";
-            SqlConnection conn = new SqlConnection(Connection());
-            conn.Open();
-            SqlCommand comselect = new SqlCommand(SelectSqlString, conn);
-
-            SqlDataReader myReader = comselect.ExecuteReader();
-            while (myReader.Read())
+            try
             {
-                //Startdato og slutdato laves til yyyy-MM-dd, for ellers tager den klokkeslæt med.
-                startdato = Convert.ToDateTime(myReader["startDato"]).ToString("yyyy-MM-dd");
-                slutdato = Convert.ToDateTime(myReader["slutDato"]).ToString("yyyy-MM-dd");
-                resnr = myReader["resnr"].ToString();
-                gade = myReader["gade"].ToString();
-                postnummer = myReader["postnr"].ToString();
-                by = myReader["byen"].ToString();
-                levering = myReader["levering"].ToString();
+                string slutdato, startdato, resnr, gade, postnummer, by, nyLinje, levering;
 
-                nyLinje = "Startdato: " + startdato + "\t Slutdato: " + slutdato + "\t Levering: " + levering + "\t Resnr: " + resnr + "\t Gade: " + gade + "\t Postnummer: " + postnummer + "\t By: " + by;
-                //Tilføjer en string/linje til listen med alle informationerne. 
-                linje.Add(nyLinje);
+                string SelectSqlString = $"select LOL.resnr, LOL.startDato, LOL.slutDato, LO.gade, LO.postnr, LO.levering, LO.byen from LejeOrdreLinjer LOL " +
+                    $"join LejeOrdre LO on LOL.ordrenr = LOL.ordrenr " +
+                    $"where startDato >= '{start}' AND startDato <= '{slut}' " +
+                    $"OR slutDato <= '{slut}' AND slutDato > '{start}' " +
+                    $"Order by startDato ";
+                conn = new SqlConnection(Connection());
+                conn.Open();
+                SqlCommand comselect = new SqlCommand(SelectSqlString, conn);
+
+                SqlDataReader myReader = comselect.ExecuteReader();
+                while (myReader.Read())
+                {
+                    //Startdato og slutdato laves til yyyy-MM-dd, for ellers tager den klokkeslæt med.
+                    startdato = Convert.ToDateTime(myReader["startDato"]).ToString("yyyy-MM-dd");
+                    slutdato = Convert.ToDateTime(myReader["slutDato"]).ToString("yyyy-MM-dd");
+                    resnr = myReader["resnr"].ToString();
+                    gade = myReader["gade"].ToString();
+                    postnummer = myReader["postnr"].ToString();
+                    by = myReader["byen"].ToString();
+                    levering = myReader["levering"].ToString();
+
+                    nyLinje = "Startdato: " + startdato + "\t Slutdato: " + slutdato + "\t Levering: " + levering + "\t Resnr: " + resnr + "\t Gade: " + gade + "\t Postnummer: " + postnummer + "\t By: " + by;
+                    //Tilføjer en string/linje til listen med alle informationerne. 
+                    linje.Add(nyLinje);
+                }
+
             }
-
-            myReader.Close();
-
-            conn.Close();
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Der er sket en fejl i din SQL\n" +
+                    ex.Message + "\n" + com.CommandText);
+            }
+            finally
+            {
+                conn.Close();
+            }
             return linje;
-
         }
 
         public void Opret_Ordre_Sog(long ID, out string navn, out string gade, out int postnr, out string byen)
@@ -190,10 +195,8 @@ namespace Delpin
             }
             catch (SqlException ex)
             {
-
-                Console.WriteLine("Der er sket en fejl i din SQL");
-                //Udskriver fejltypen:
-                Console.WriteLine(ex.Message);
+                MessageBox.Show("Der er sket en fejl i din SQL\n" +
+                    ex.Message + "\n" + com.CommandText);
             }
             finally
             {
@@ -225,16 +228,13 @@ namespace Delpin
             }
             catch (SqlException ex)
             {
-
-                Console.WriteLine("Der er sket en fejl i din SQL");
-                //Udskriver fejltypen:
-                Console.WriteLine(ex.Message);
+                MessageBox.Show("Der er sket en fejl i din SQL\n" +
+                    ex.Message + "\n" + com.CommandText);
             }
             finally
             {
                 conn.Close();
             }
-
         }
 
         public void Opret_Ordre_Afdeling(string afd, out string bynavn, out int postnr, out string gade)
@@ -257,10 +257,8 @@ namespace Delpin
             }
             catch (SqlException ex)
             {
-
-                Console.WriteLine("Der er sket en fejl i din SQL");
-                //Udskriver fejltypen:
-                Console.WriteLine(ex.Message);
+                MessageBox.Show("Der er sket en fejl i din SQL\n" +
+                    ex.Message + "\n" + com.CommandText);
             }
             finally
             {
@@ -282,10 +280,8 @@ namespace Delpin
             }
             catch (SqlException ex)
             {
-
-                Console.WriteLine("Der er sket en fejl i din SQL");
-                //Udskriver fejltypen:
-                Console.WriteLine(ex.Message);
+                MessageBox.Show("Der er sket en fejl i din SQL\n" +
+                    ex.Message + "\n" + com.CommandText);
             }
             finally
             {
@@ -312,15 +308,137 @@ namespace Delpin
             }
             catch (SqlException ex)
             {
-
-                Console.WriteLine("Der er sket en fejl i din SQL");
-                //Udskriver fejltypen:
-                Console.WriteLine(ex.Message);
+                MessageBox.Show("Der er sket en fejl i din SQL\n" +
+                    ex.Message + "\n" + com.CommandText);
             }
             finally
             {
                 conn.Close();
             }
+        }
+
+        public List<HovedKategori> HentHovedKategori()
+        {
+            List<HovedKategori> result = new List<HovedKategori>();
+
+            try
+            {
+                string VisHovedKategoriSqlString = $"Select navn from HovedKategori ";
+
+                conn = new SqlConnection(Connection());
+                conn.Open();
+
+                SqlCommand comselect = new SqlCommand();
+                comselect.CommandText = VisHovedKategoriSqlString;
+                comselect.Connection = conn;
+
+
+                SqlDataReader myReader = comselect.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    result.Add(new HovedKategori(myReader["navn"].ToString()));
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Der er sket en fejl i din SQL\n" +
+                    ex.Message + "\n" + com.CommandText);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return result;
+        }
+
+        public List<Kategori> HentKategorir(string hovedKategori)
+        {
+            // Liste som midlertidige gemmer kategorier 
+
+            List<Kategori> result = new List<Kategori>();
+
+            try
+            {
+                string VisKategoriSqlString = $"" +
+                $"SELECT Kategori.navn, Kategori.id FROM Kategori " +
+                $"RIGHT JOIN Hovedkategori on Hovedkategori.id = Kategori.overkategori " +
+                $"WHERE hovedkategori.navn = '{hovedKategori}' ";
+
+                conn = new SqlConnection(Connection());
+                conn.Open();
+
+                SqlCommand comselect = new SqlCommand();
+                comselect.CommandText = VisKategoriSqlString;
+                comselect.Connection = conn;
+
+
+                SqlDataReader myReader = comselect.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    result.Add(new Kategori(myReader["navn"].ToString(), Convert.ToInt32(myReader["id"])));
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Der er sket en fejl i din SQL\n" +
+                    ex.Message + "\n" + com.CommandText);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return result;
+        }
+
+        public List<Res> HentRes(int kategoriId, string startdato, string slutdato)
+        {
+            // Liste som midlertidige gemmer resourcer
+
+            List<Res> result = new List<Res>();
+
+            try
+            {
+                string VisKategoriSqlString = $"" +
+                                $"SELECT Res.resnr, Res.navn, Res.pris, LejeOrdreLinjer.startDato, LejeOrdreLinjer.slutDato " +
+                                $"FROM Res " +
+                                $"left join LejeOrdreLinjer ON Res.resnr = LejeOrdreLinjer.resnr " +
+                                $" WHERE Res.resnr NOT IN " +
+                                $"(SELECT resnr FROM LejeOrdreLinjer LOL " +
+                                $"WHERE(startDato <= '{startdato}' AND slutDato >= '{startdato}') " +
+                                $"OR(startDato < '{slutdato}' AND slutDato >= '{slutdato}') " +
+                                $"OR('{startdato}' <= startDato AND '{slutdato}' >= startDato)) " +
+                                $"and Res.kategori =  {kategoriId} " +
+                                $"Order by startDato, slutDato";
+
+                conn = new SqlConnection(Connection());
+                conn.Open();
+
+                SqlCommand comselect = new SqlCommand();
+                comselect.CommandText = VisKategoriSqlString;
+                comselect.Connection = conn;
+
+
+                SqlDataReader myReader = comselect.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    result.Add(new Res(Convert.ToDouble(myReader["pris"]), myReader["navn"].ToString(), Convert.ToInt32(myReader["resnr"]), myReader["startDato"].ToString(), myReader["slutDato"].ToString()));
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Der er sket en fejl i din SQL\n" +
+                    ex.Message + "\n" + com.CommandText);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return result;
         }
     }
 }

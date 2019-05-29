@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Delpin.Temp_Line1;
 
 
 namespace Delpin
 {
     public partial class Sog_RESS : Form
     {
-        Temp_Line1 temp = new Temp_Line1();
+        Database_Manager temp = new Database_Manager();
         List<HovedKategori> HovedKategorier;
         List<Kategori> Katagorier;
         List<Res> Resurser;

@@ -9,33 +9,29 @@ namespace Delpin
 {
     class Controller
     {
-        Database_Manager dbm = new Database_Manager();
+        Database_Manager DBM = new Database_Manager();
 
-        public static void GemDEB(long cprCvr, string navn, string gade, int postnr, string by, int tlf, string email, string ansvarlig)
+        public void GemDEB(long cprCvr, string navn, string gade, int postnr, string by, int tlf, string email, string ansvarlig)
         {
-            Database_Manager dbm = new Database_Manager();
             DEB deb = new DEB(cprCvr, navn, gade, postnr, by, tlf, email, ansvarlig);
-            dbm.IndsætDEB(deb);
+            DBM.IndsætDEB(deb);
         }
 
-        public static DEB HentDEB(long cprCvr)
+        public DEB HentDEB(long cprCvr)
         {
-            Database_Manager dbm = new Database_Manager();
-            DEB deb = dbm.HentDEB(cprCvr);
+            DEB deb = DBM.HentDEB(cprCvr);
             return deb;
         }
 
-        public static void SletDEB(long cprCvr)
+        public void SletDEB(long cprCvr)
         {
-            Database_Manager dbm = new Database_Manager();
-            dbm.SletDEB(cprCvr);
+            DBM.SletDEB(cprCvr);
         }
 
-        public static void UpdateDEB(long cprCvr, string navn, string gade, int postnr, string by, int tlf, string email, string ansvarlig)
+        public void UpdateDEB(long cprCvr, string navn, string gade, int postnr, string by, int tlf, string email, string ansvarlig)
         {
-            Database_Manager dbm = new Database_Manager();
             DEB deb = new DEB(cprCvr, navn, gade, postnr, by, tlf, email, ansvarlig);
-            dbm.UpdateDEB(deb);
+            DBM.UpdateDEB(deb);
         }
 
         public void SkrivOpretFil(string filnavn, string start, string slut)
@@ -48,7 +44,7 @@ namespace Delpin
             List<string> linje = new List<string>();
 
             //Der laves en liste som bliver udfyldt med informationer fra databasen. 
-            linje = dbm.HentLejeListe(start, slut);
+            linje = DBM.HentLejeListe(start, slut);
             for (int i = 0; i < linje.Count; i++)
             {
                 //Udskriver hver linje i listen til en fil.
@@ -62,5 +58,6 @@ namespace Delpin
             if (outputStream != null)
                 outputStream.Close();
         }
+
     }
 }

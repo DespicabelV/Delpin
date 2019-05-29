@@ -24,8 +24,7 @@ namespace Delpin
             label5.Visible = false;
             label6.Visible = false;
             label4.Visible = false;
-            label7.Visible = false;
-            
+            label7.Visible = false; 
         }
 
         private void buttonSog_Click(object sender, EventArgs e)
@@ -89,11 +88,6 @@ namespace Delpin
             {
                 dataGridView1.Rows.RemoveAt(item.Index);
             }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void ButtonUpdate_Click(object sender, EventArgs e)

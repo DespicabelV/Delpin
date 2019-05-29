@@ -48,6 +48,12 @@
             this.delpinasDataSet_Opret_Ordre_Afdeling = new Delpin.delpinasDataSet_Opret_Ordre_Afdeling();
             this.afdelingerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Navn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Res_Nr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pris_Pr_Dag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pris = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Slut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonTilfojVare = new System.Windows.Forms.Button();
             this.buttonSletVare = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -60,12 +66,6 @@
             this.ButtonUpdate = new System.Windows.Forms.Button();
             this.afdelingerTableAdapter = new Delpin.delpinasDataSet_Opret_Ordre_AfdelingTableAdapters.AfdelingerTableAdapter();
             this.buttonIndset = new System.Windows.Forms.Button();
-            this.Navn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Res_Nr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pris_Pr_Dag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pris = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Slut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.afdelingerBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSet_Opret_Ordre_Afdeling)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.afdelingerBindingSource)).BeginInit();
@@ -247,7 +247,42 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(853, 315);
             this.dataGridView1.TabIndex = 15;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Navn
+            // 
+            this.Navn.HeaderText = "Navn";
+            this.Navn.Name = "Navn";
+            this.Navn.ReadOnly = true;
+            // 
+            // Res_Nr
+            // 
+            this.Res_Nr.HeaderText = "RES Nr.";
+            this.Res_Nr.Name = "Res_Nr";
+            this.Res_Nr.ReadOnly = true;
+            // 
+            // Pris_Pr_Dag
+            // 
+            this.Pris_Pr_Dag.HeaderText = "Pris pr. dag";
+            this.Pris_Pr_Dag.Name = "Pris_Pr_Dag";
+            this.Pris_Pr_Dag.ReadOnly = true;
+            // 
+            // Pris
+            // 
+            this.Pris.HeaderText = "Pris";
+            this.Pris.Name = "Pris";
+            this.Pris.ReadOnly = true;
+            // 
+            // Start
+            // 
+            this.Start.HeaderText = "Start Dato";
+            this.Start.Name = "Start";
+            this.Start.ReadOnly = true;
+            // 
+            // Slut
+            // 
+            this.Slut.HeaderText = "Slut Dato";
+            this.Slut.Name = "Slut";
+            this.Slut.ReadOnly = true;
             // 
             // buttonTilfojVare
             // 
@@ -367,42 +402,6 @@
             this.buttonIndset.Text = "Indset Vare";
             this.buttonIndset.UseVisualStyleBackColor = true;
             this.buttonIndset.Click += new System.EventHandler(this.buttonIndset_Click);
-            // 
-            // Navn
-            // 
-            this.Navn.HeaderText = "Navn";
-            this.Navn.Name = "Navn";
-            this.Navn.ReadOnly = true;
-            // 
-            // Res_Nr
-            // 
-            this.Res_Nr.HeaderText = "RES Nr.";
-            this.Res_Nr.Name = "Res_Nr";
-            this.Res_Nr.ReadOnly = true;
-            // 
-            // Pris_Pr_Dag
-            // 
-            this.Pris_Pr_Dag.HeaderText = "Pris pr. dag";
-            this.Pris_Pr_Dag.Name = "Pris_Pr_Dag";
-            this.Pris_Pr_Dag.ReadOnly = true;
-            // 
-            // Pris
-            // 
-            this.Pris.HeaderText = "Pris";
-            this.Pris.Name = "Pris";
-            this.Pris.ReadOnly = true;
-            // 
-            // Start
-            // 
-            this.Start.HeaderText = "Start Dato";
-            this.Start.Name = "Start";
-            this.Start.ReadOnly = true;
-            // 
-            // Slut
-            // 
-            this.Slut.HeaderText = "Slut Dato";
-            this.Slut.Name = "Slut";
-            this.Slut.ReadOnly = true;
             // 
             // Opret_Ordre
             // 

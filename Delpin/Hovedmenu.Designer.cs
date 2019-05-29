@@ -76,7 +76,7 @@
             this.buttonRedigerRes.Name = "buttonRedigerRes";
             this.buttonRedigerRes.Size = new System.Drawing.Size(152, 60);
             this.buttonRedigerRes.TabIndex = 3;
-            this.buttonRedigerRes.Text = "Søg/Rediger RES";
+            this.buttonRedigerRes.Text = "Søg RES";
             this.buttonRedigerRes.UseVisualStyleBackColor = true;
             this.buttonRedigerRes.Click += new System.EventHandler(this.buttonRedigerRes_Click);
             // 

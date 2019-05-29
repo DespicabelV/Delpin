@@ -47,21 +47,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonOpdater = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lejeOrdreBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.delpinasDataSetSog_DEB = new Delpin.delpinasDataSetSog_DEB();
             this.lejeOrdreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.søgToolStrip = new System.Windows.Forms.ToolStrip();
             this.cprCvrToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.cprCvrToolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.søgToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lejeOrdreBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.delpinasDataSetSog_DEB = new Delpin.delpinasDataSetSog_DEB();
             this.lejeOrdreTableAdapter = new Delpin.delpinasDataSetSog_DEBTableAdapters.LejeOrdreTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource)).BeginInit();
-            this.søgToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSetSog_DEB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource)).BeginInit();
+            this.søgToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonSlet
@@ -190,7 +190,6 @@
             this.textBoxNavn.Name = "textBoxNavn";
             this.textBoxNavn.Size = new System.Drawing.Size(380, 22);
             this.textBoxNavn.TabIndex = 22;
-            this.textBoxNavn.TextChanged += new System.EventHandler(this.textBoxNavn_TextChanged);
             // 
             // label2
             // 
@@ -237,43 +236,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(633, 308);
             this.dataGridView1.TabIndex = 39;
             // 
-            // lejeOrdreBindingSource
-            // 
-            this.lejeOrdreBindingSource.DataMember = "LejeOrdre";
-            // 
-            // søgToolStrip
-            // 
-            this.søgToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.søgToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.søgToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cprCvrToolStripLabel1,
-            this.cprCvrToolStripTextBox1,
-            this.søgToolStripButton});
-            this.søgToolStrip.Location = new System.Drawing.Point(135, 8);
-            this.søgToolStrip.Name = "søgToolStrip";
-            this.søgToolStrip.Size = new System.Drawing.Size(246, 27);
-            this.søgToolStrip.TabIndex = 41;
-            this.søgToolStrip.Text = "søgToolStrip";
-            // 
-            // cprCvrToolStripLabel1
-            // 
-            this.cprCvrToolStripLabel1.Name = "cprCvrToolStripLabel1";
-            this.cprCvrToolStripLabel1.Size = new System.Drawing.Size(54, 24);
-            this.cprCvrToolStripLabel1.Text = "cprCvr:";
-            // 
-            // cprCvrToolStripTextBox1
-            // 
-            this.cprCvrToolStripTextBox1.Name = "cprCvrToolStripTextBox1";
-            this.cprCvrToolStripTextBox1.Size = new System.Drawing.Size(100, 27);
-            // 
-            // søgToolStripButton
-            // 
-            this.søgToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.søgToolStripButton.Name = "søgToolStripButton";
-            this.søgToolStripButton.Size = new System.Drawing.Size(39, 24);
-            this.søgToolStripButton.Text = "Søg";
-            this.søgToolStripButton.Click += new System.EventHandler(this.søgToolStripButton_Click);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ordrenr";
@@ -296,6 +258,43 @@
             // 
             this.delpinasDataSetSog_DEB.DataSetName = "delpinasDataSetSog_DEB";
             this.delpinasDataSetSog_DEB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lejeOrdreBindingSource
+            // 
+            this.lejeOrdreBindingSource.DataMember = "LejeOrdre";
+            // 
+            // søgToolStrip
+            // 
+            this.søgToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.søgToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.søgToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cprCvrToolStripLabel1,
+            this.cprCvrToolStripTextBox1,
+            this.søgToolStripButton});
+            this.søgToolStrip.Location = new System.Drawing.Point(135, 8);
+            this.søgToolStrip.Name = "søgToolStrip";
+            this.søgToolStrip.Size = new System.Drawing.Size(207, 27);
+            this.søgToolStrip.TabIndex = 41;
+            this.søgToolStrip.Text = "søgToolStrip";
+            // 
+            // cprCvrToolStripLabel1
+            // 
+            this.cprCvrToolStripLabel1.Name = "cprCvrToolStripLabel1";
+            this.cprCvrToolStripLabel1.Size = new System.Drawing.Size(54, 24);
+            this.cprCvrToolStripLabel1.Text = "cprCvr:";
+            // 
+            // cprCvrToolStripTextBox1
+            // 
+            this.cprCvrToolStripTextBox1.Name = "cprCvrToolStripTextBox1";
+            this.cprCvrToolStripTextBox1.Size = new System.Drawing.Size(100, 27);
+            // 
+            // søgToolStripButton
+            // 
+            this.søgToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.søgToolStripButton.Name = "søgToolStripButton";
+            this.søgToolStripButton.Size = new System.Drawing.Size(39, 24);
+            this.søgToolStripButton.Text = "Søg";
+            this.søgToolStripButton.Click += new System.EventHandler(this.søgToolStripButton_Click);
             // 
             // lejeOrdreTableAdapter
             // 
@@ -330,11 +329,11 @@
             this.Text = "Sog_DEB";
             this.Load += new System.EventHandler(this.Sog_DEB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSetSog_DEB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource)).EndInit();
             this.søgToolStrip.ResumeLayout(false);
             this.søgToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lejeOrdreBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.delpinasDataSetSog_DEB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

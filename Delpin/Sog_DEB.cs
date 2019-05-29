@@ -12,17 +12,16 @@ namespace Delpin
 {
     public partial class Sog_DEB : Form
     {
+        Controller cont = new Controller();
         public Sog_DEB()
         {
             InitializeComponent();
         }
 
-       
-
         private void buttonSlet_Click(object sender, EventArgs e)
         {
             long cprCvr = Convert.ToInt64(cprCvrToolStripTextBox1.Text);
-            Controller.SletDEB(cprCvr);
+            cont.SletDEB(cprCvr);
             MessageBox.Show("DEB slettet");
         }
 
@@ -36,23 +35,8 @@ namespace Delpin
             int tlf = Convert.ToInt32(textBoxTlf.Text);
             string email = textBoxEmail.Text;
             string ansvarlig = textBoxAnsvarlig.Text;
-            Controller.UpdateDEB(cprCvr, navn, gade, postnr, by, tlf, email, ansvarlig);
+            cont.UpdateDEB(cprCvr, navn, gade, postnr, by, tlf, email, ansvarlig);
             MessageBox.Show("DEB opdateret");
-        }
-
-        private void textBoxNavn_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fillBy1ToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         private void Sog_DEB_Load(object sender, EventArgs e)
@@ -65,7 +49,7 @@ namespace Delpin
         private void søgToolStripButton_Click(object sender, EventArgs e)
         {
             long cprCvr = Convert.ToInt64(cprCvrToolStripTextBox1.Text);
-            DEB deb = Controller.HentDEB(cprCvr);
+            DEB deb = cont.HentDEB(cprCvr);
             textBoxNavn.Text = deb.Navn;
             textBoxGade.Text = deb.Gade;
             textBoxPostNr.Text = deb.Postnr.ToString();

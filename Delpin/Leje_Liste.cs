@@ -17,13 +17,13 @@ namespace Delpin
             InitializeComponent();
         }
 
-        Controller tk = new Controller();
+        Controller cont = new Controller();
         private void buttonPrint_Click(object sender, EventArgs e)
         {
             string start = dateTimePickerStart.Text;
             string slut = dateTimePickerSlut.Text;
             string filnavn = start + " til "+ slut;
-            tk.SkrivOpretFil(filnavn, start, slut);
+            cont.SkrivOpretFil(filnavn, start, slut);
         }
     }
 }
