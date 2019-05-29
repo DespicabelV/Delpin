@@ -39,7 +39,7 @@ namespace Delpin
             //Opretter filnavn. Filnavnet hedder startdato + slutdato. 
             filnavn = $"{filnavn}.txt";
             StreamWriter outputStream = null;
-
+            
             outputStream = new StreamWriter(filnavn);
             List<string> linje = new List<string>();
 

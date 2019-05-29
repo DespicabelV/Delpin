@@ -133,7 +133,7 @@ namespace Delpin
                 string slutdato, startdato, resnr, gade, postnummer, by, nyLinje, levering;
 
                 string SelectSqlString = $"select LOL.resnr, LOL.startDato, LOL.slutDato, LO.gade, LO.postnr, LO.levering, LO.byen from LejeOrdreLinjer LOL " +
-                    $"join LejeOrdre LO on LOL.ordrenr = LOL.ordrenr " +
+                    $"join LejeOrdre LO on LOL.ordrenr = LO.ordrenr " +
                     $"where startDato >= '{start}' AND startDato <= '{slut}' " +
                     $"OR slutDato <= '{slut}' AND slutDato > '{start}' " +
                     $"Order by startDato ";
