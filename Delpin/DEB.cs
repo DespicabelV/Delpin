@@ -8,6 +8,7 @@ namespace Delpin
 {
     public class DEB
     {
+        //Katrine:
         private long cprCvr;
         private string navn;
         private string gade;

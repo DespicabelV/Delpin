@@ -9,6 +9,7 @@ namespace Delpin
 {
     class Controller
     {
+        //Katrine:
         Database_Manager DBM = new Database_Manager();
 
         public void GemDEB(long cprCvr, string navn, string gade, int postnr, string by, int tlf, string email, string ansvarlig)
@@ -23,10 +24,11 @@ namespace Delpin
             return deb;
         }
 
-        public void SletDEB(long cprCvr)
-        {
-            DBM.SletDEB(cprCvr);
-        }
+        //Det er ikke muligt at slette en DEB i øjeblikket.
+        //public void SletDEB(long cprCvr)
+        //{
+        //    DBM.SletDEB(cprCvr);
+        //}
 
         public void UpdateDEB(long cprCvr, string navn, string gade, int postnr, string by, int tlf, string email, string ansvarlig)
         {

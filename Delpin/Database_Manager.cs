@@ -20,6 +20,7 @@ namespace Delpin
             return "Data Source=den1.mssql7.gear.host; Initial Catalog=delpinas; User Id=delpinas; Password=Lu3wumM-!cTu";
         }
 
+        //Katrine:
         public void IndsætDEB(DEB deb)
         {
             try
@@ -77,29 +78,30 @@ namespace Delpin
             return deb;
         }
 
-        public void SletDEB(long cprCvr)
-        {
-            try
-            {
-                string DeleteSqlString = $"Delete from LejeOrdreLinjer where cprCvr" +
-                    $"Delete from DEB where cprCvr = {cprCvr}";
-                Console.WriteLine(DeleteSqlString);
-                conn = new SqlConnection(Connection());
-                conn.Open();
-                SqlCommand com = new SqlCommand(DeleteSqlString, conn);
-                com.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Der er sket en fejl i din SQL\n" +
-                    ex.Message + "\n" + com.CommandText);
-            }
-            finally
-            {
-                conn.Close();
-            }
+        //Bruges ikke, da det ikke er muligt at slette en DEB i øjeblikket. 
+        //public void SletDEB(long cprCvr)
+        //{
+        //    try
+        //    {
+        //        string DeleteSqlString = $"Delete from LejeOrdreLinjer where cprCvr" +
+        //            $"Delete from DEB where cprCvr = {cprCvr}";
+        //        Console.WriteLine(DeleteSqlString);
+        //        conn = new SqlConnection(Connection());
+        //        conn.Open();
+        //        SqlCommand com = new SqlCommand(DeleteSqlString, conn);
+        //        com.ExecuteNonQuery();
+        //    }
+        //    catch (SqlException ex)
+        //    {
+        //        MessageBox.Show("Der er sket en fejl i din SQL\n" +
+        //            ex.Message + "\n" + com.CommandText);
+        //    }
+        //    finally
+        //    {
+        //        conn.Close();
+        //    }
 
-        }
+        //}
  
         public void UpdateDEB(DEB deb)
         {
@@ -127,6 +129,7 @@ namespace Delpin
 
         public List<string> HentLejeListe(string start, string slut)
         {
+            //Henter lejelisten og printer den ud til en textfil. 
             List<string> linje = new List<string>();
             try
             {
@@ -171,6 +174,7 @@ namespace Delpin
             return linje;
         }
 
+        //Viggo:
         public void Opret_Ordre_Sog(long ID, out string navn, out string gade, out int postnr, out string byen)
         {
             navn = "";
@@ -318,6 +322,7 @@ namespace Delpin
             }
         }
 
+        //Line:
         public List<HovedKategori> HentHovedKategori()
         {
             List<HovedKategori> result = new List<HovedKategori>();

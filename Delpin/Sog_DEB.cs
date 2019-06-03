@@ -12,12 +12,14 @@ namespace Delpin
 {
     public partial class Sog_DEB : Form
     {
+        //Katrine:
         Controller cont = new Controller();
         public Sog_DEB()
         {
             InitializeComponent();
         }
 
+        //Det er ikke muligt i øjeblikket at slette en DEB. 
         //private void buttonSlet_Click(object sender, EventArgs e)
         //{
         //    long cprCvr = Convert.ToInt64(cprCvrToolStripTextBox1.Text);

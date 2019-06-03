@@ -12,6 +12,7 @@ namespace Delpin
 {
     public partial class Hovedmenu : Form
     {
+        //Viggo:
         public Hovedmenu()
         {
             InitializeComponent();

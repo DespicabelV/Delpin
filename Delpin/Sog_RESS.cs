@@ -13,6 +13,7 @@ namespace Delpin
 {
     public partial class Sog_RESS : Form
     {
+        //Line:
         Database_Manager temp = new Database_Manager();
         List<HovedKategori> HovedKategorier;
         List<Kategori> Katagorier;

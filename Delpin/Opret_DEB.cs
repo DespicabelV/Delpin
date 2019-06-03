@@ -12,6 +12,7 @@ namespace Delpin
 {
     public partial class Opret_DEB : Form
     {
+        //Katrine
         Controller cont = new Controller();
         public Opret_DEB()
         {

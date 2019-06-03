@@ -12,6 +12,7 @@ namespace Delpin
 {
     public partial class Opret_Ordre : Form
     {
+        //Viggo:
         Database_Manager DBM = new Database_Manager();
         int index = 0;
         public Opret_Ordre()

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Delpin
 {
+    //Line:
     class ResClass
     {
     }

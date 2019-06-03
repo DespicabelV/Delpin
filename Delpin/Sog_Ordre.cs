@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Delpin
 {
+    //Viggo:
     public partial class Sog_Ordre : Form
     {
         Database_Manager DBM = new Database_Manager();
