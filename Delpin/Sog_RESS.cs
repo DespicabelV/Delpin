@@ -66,6 +66,7 @@ namespace Delpin
             Global.global_resnr_Sog_Ress = Convert.ToInt32(dataGridView1.Rows[index].Cells["Resnr"].Value);
             Global.global_pris_Sog_Ress  = Convert.ToInt64(dataGridView1.Rows[index].Cells["Pris"].Value);
 
+            MessageBox.Show("Tilføj tilbehør her");
             this.Close();
         }
     }
